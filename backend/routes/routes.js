@@ -12,5 +12,8 @@ app.get('/', controller.getIndex);
 
 // routes *remove when done*
 app.post('/postOrder', orderController.postOrder);
+app.post('/updateOrder/:orderId', orderController.updateOrder);
+app.get('/deleteOrder/:orderId', orderController.DeleteOrder);
+app.get('/getAllOrders', orderController.getAllOrders);
 
 module.exports = app;

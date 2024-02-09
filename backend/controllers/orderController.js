@@ -2,6 +2,8 @@ const db = require('../models/db.js');
 
 const Order=  require('../models/OrderModel.js');
 
+const mongoose = require('mongoose');
+
 const orderController = {
     postOrder: async function(req, res){
         const formData = req.body;
@@ -30,25 +32,41 @@ const orderController = {
         const order = req.body;
 
         try{
-            const updatedOrder = await Order.updateOne({_id: query}, {
-                orderNum: order.orderNum,
-                orderedProduct: order.orderedProduct,
-                name: order.name,
-                contactNo: order.contactNo,
-                email: order.email,
-                fbLink: order.fbLink,
-                mode: order.mode,
-                dedication: order.dedication,
-                orderDes: order.orderDes,
-                address: order.address,
-                dateOrdered: order.dateOrdered,
-                datePickup: order.datePickup,
-                status: order.status
-            });
+            const updatedOrder = await Order.updateOne({orderNum: query}, order);
 
-            console.log(updatedOrder);
+            if(!updatedOrder){
+                res.status(404).json({error: 404, message: 'Order not found.'});
+            } else {
+                res.json(updatedOrder);
+            }
         } catch (err) {
-            console.log('Error updating order: ', err);
+            return res.status(500).send(err);
+        }
+    }, 
+
+    DeleteOrder: async function (req, res) {
+        const query = req.params.orderId;
+
+        try {
+            const orderToDelete = await Order.deleteOne({orderNum: query});
+
+            if(!orderToDelete){
+                res.status(404).json({error: 404, message: 'Order not found.'});
+            } else {
+                res.json(orderToDelete);
+            }
+        } catch(err){
+            return res.status(500).send(err);
+        }
+    },
+
+    getAllOrders: async function(req, res){
+        try{
+            const orders = await Order.find();
+
+            res.json(orders);
+        } catch(err){
+            return res.status(500).send(err);   
         }
     }
 }
