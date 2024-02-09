@@ -39,7 +39,7 @@ const orderController = {
             } else {
                 res.json(updatedOrder);
             }
-        } catch (err) {
+        } catch (err){
             return res.status(500).send(err);
         }
     }, 
@@ -69,6 +69,6 @@ const orderController = {
             return res.status(500).send(err);   
         }
     }
-}
+};
 
 module.exports = orderController;
