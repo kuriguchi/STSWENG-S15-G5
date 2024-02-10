@@ -18,15 +18,6 @@ const orderController = {
             });
     },
 
-    getOrders: async function(req, res){
-        try{
-            const orders = await Order.find();
-            res.json(orders);
-        } catch (err) {
-            console.log('Error retrieving orders: ', err);
-        }
-    },
-
     updateOrder: async function (req, res){
         const query = req.params.orderId;
         const order = req.body;

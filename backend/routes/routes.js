@@ -15,5 +15,9 @@ app.get('/deleteOrder/:orderId', orderController.DeleteOrder);
 app.get('/getAllOrders', orderController.getAllOrders);
 
 app.post('/createContact', contactController.createContact);
+app.post('/updateContact', contactController.updateContact);
+app.get('/deleteContact', contactController.deleteContact);
+app.get('/getContact', contactController.getContact);
+app.get('/getAllContacts', contactController.getAllContacts);
 
 module.exports = app;

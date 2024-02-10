@@ -1,4 +1,3 @@
-/** Contact Model */
 var mongoose = require('mongoose');
 
 var ContactSchema = new mongoose.Schema({
