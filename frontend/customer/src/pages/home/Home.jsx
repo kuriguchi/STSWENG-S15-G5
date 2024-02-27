@@ -1,4 +1,8 @@
+//import css
 import './Home.css';
+
+//import router
+import { BrowserRouter as Link } from 'react-router-dom';
 
 // images
 import img1 from '../../assets/carousel-imgs/img1.png';
@@ -12,11 +16,15 @@ import seemore_partition from '../../assets/see_more_partition_header.svg';
 import seemoreimg1 from '../../assets/seemore-imgs/seemoreimg1.png';
 import seemoreimg2 from '../../assets/seemore-imgs/seemoreimg2.png';
 
+const ViewProdBtn = ({ to, children, handleClick }) => {
+    return <Link to={to}><button onClick={handleClick} role="viewProdBtn" className="orange-rounded-button"><div className="inner-white-line">{children}</div></button></Link>
+};
+
 const Home = () => {
     return (
         <main>
             <div className="image-carousel">
-                <img src={img1} alt="image-carousel" className="carousel-image" />
+                <img role="img_carousel" src={img1} alt="image-carousel" className="carousel-image" />
 
                 <div className="carousel-dots">{/* to fix */}</div>
             </div>
@@ -46,9 +54,8 @@ const Home = () => {
                                 tantalize your taste buds and satisfy your cravings.
                             </p>
                         </div>
-                        <button className="orange-rounded-button">
-                            <div className="inner-white-line">view our products</div>
-                        </button>
+
+                        <ViewProdBtn to="/ourproducts">view our products</ViewProdBtn>
                     </div>
                 </div>
                 <div className="featured-products-right">
@@ -90,4 +97,4 @@ const Home = () => {
     );
 };
 
-export default Home;
+export {ViewProdBtn, Home};
