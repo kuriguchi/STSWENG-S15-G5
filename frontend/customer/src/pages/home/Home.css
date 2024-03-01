@@ -5,17 +5,10 @@ main {
   justify-content: center;
 }
 
-.image-carousel {
-  margin: auto;
-  position: relative;
-  display: flex;
-  justify-content: center;
+.image-carousel-container {
   width: 100%;
-}
-
-.carousel-image {
-  width: 85%;
-  height: 100%;
+  max-width: 141rem;
+  margin: auto;
 }
 
 .tagline {
@@ -28,6 +21,8 @@ main {
 
 .partition-image {
   width: 85%;
+  max-width: 120rem;
+  margin: auto;
 }
 
 /* Featured products section */
@@ -36,7 +31,8 @@ main {
   display: flex;
   justify-content: space-between;
   width: 83%;
-  min-width: 400px;
+  max-width: 120rem;
+  margin: auto;
   margin-top: 1.313rem;
 }
 
@@ -74,6 +70,36 @@ main {
   position: relative;
 }
 
+.windowframe::before,
+.windowframe::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.windowframe::before {
+  background-color: #5a4226;
+  opacity: 0;
+}
+
+.windowframe::after {
+  background-color: #2a1111;
+  opacity: 0;
+}
+
+.windowframe:hover::before {
+  opacity: 0.6;
+}
+
+.windowframe:hover::after {
+  opacity: 0.6;
+}
+
 .windowframe-image {
   width: 100%;
   height: 100%;
@@ -82,6 +108,36 @@ main {
 .windowframe.rounded {
   border-top-left-radius: 20000px;
   border-top-right-radius: 20000px;
+}
+
+.windowframe-hover-text {
+  z-index: 1000;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hover-text-title {
+  text-align: center;
+  font-family: "Pridi", "Roboto", sans-serif;
+  font-size: 2.188rem;
+  font-weight: 600;
+  color: white;
+  width: 85%;
+}
+
+.hover-text-price {
+  text-align: center;
+  font-family: "Pridi", "Roboto", sans-serif;
+  font-size: 1.563rem;
+  font-weight: 200;
+  color: white;
 }
 
 .featured-products-text-section {
