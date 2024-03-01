@@ -1,0 +1,52 @@
+.page-title {
+  margin: 0 auto;
+  margin-top: 3rem;
+  margin-bottom: 5rem;
+}
+
+.our-story-section {
+  width: 85.125rem;
+  height: 108.35rem;
+  margin: auto;
+  position: relative;
+}
+
+.our-story-imgs {
+  position: absolute;
+  box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.4);
+}
+
+.our-story-icons {
+  position: absolute;
+}
+
+.our-story-msgs {
+  position: absolute;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+  background-color: white;
+  box-sizing: border-box;
+  width: 45.438rem;
+  padding: 3.375rem 2rem;
+
+  color: black;
+  font-family: "Fjalla One", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  text-align: center;
+}
+
+/* positions */
+#ourStoryImg1 {
+  top: 0;
+  left: 0;
+}
+
+#ourStoryCupcakeIcon {
+  top: 4rem;
+  left: 59.438rem;
+}
+
+#ourStoryMsg1 {
+  top: 24.875rem;
+  left: 32rem;
+}
