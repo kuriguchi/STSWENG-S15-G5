@@ -1,8 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Pridi:wght@200;300;400;500;600;700&family=Roboto:wght@100&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap");
 
-:root {
-  /* font-size: 16px;  */
+/* :root {
+  font-size: 16px; 
+}  */
+
+.App{
+  display: flex;
+  flex-direction: column;
 }
 
 html {
@@ -12,4 +17,148 @@ html {
 body {
   padding: 0;
   margin: 0;
+}
+
+.pages{
+  display: flex;
+  flex-direction: column;
+  height: auto;
+}
+
+.flex-row{
+  display: flex;
+}
+
+.flex-col{
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+
+.align-center{
+  align-items: center;
+}
+
+.pridi-medium-25 {
+  font-family: "Pridi", "Roboto", sans-serif;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.pridi-medium-15{
+  font-family: "Pridi", "Roboto", sans-serif;
+  color: black;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.pridi-medium-12{
+  font-family: "Pridi", "Roboto", sans-serif;
+  color: black;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal; 
+}
+
+.pridi-medium-20{
+  font-family: "Pridi", "Roboto", sans-serif;
+  color: black;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal; 
+}
+
+.input-box{
+  display: flex;
+  position: relative;
+  width: 248.6px;
+  flex-direction: column;
+}
+
+.input-box label{
+  width: max-content;
+  height: max-content;
+}
+
+::placeholder{
+  color: rgba(187, 187, 187, 0.73);
+}
+
+.input-padding-15{
+  padding-left: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.input-padding-10{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.input-box input{
+  width: auto;
+  flex-shrink: 0;
+
+  border: 1px solid black;
+
+  border-radius: 10px;
+}
+
+.orange-text {
+  color: #ED4B01;
+}
+
+.spacer-30 {
+  width: 30px;
+}
+
+.spacer-5 {
+  width: 5px;
+}
+
+.spacer-25{
+  width: 25px;
+}
+
+.br-10{
+  height: 10px;
+}
+
+.br-50{
+  height: 50px;
+}
+
+.br-30{
+  height: 30px;
+}
+
+.divider-100{
+  width: 114px;
+  height: 1px;
+  flex-shrink: 0;
+
+  background: #000;
+}
+
+.align-self-center{
+  align-self: center;
+}
+
+.margin-center{
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.font-white{
+  color: white;
+}
+
+.text-center{
+  text-align: center;
 }

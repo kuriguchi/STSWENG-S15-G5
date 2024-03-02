@@ -7,8 +7,11 @@ import OurProducts from './pages/ourproducts/OurProducts';
 import ContactUs from './pages/contactus/ContactUs';
 
 // components
-import Navbar from './components/Navbar/Navbar';
-import Footer from './components/Footer/Footer';
+import Navbar from './components/navbar/Navbar';
+import Footer from './components/footer/Footer';
+
+//test components
+import CustomerInfo from './pages/ourproducts/orderform/components/CustomerInfo';
 
 function App() {
     return (
@@ -21,6 +24,9 @@ function App() {
                         <Route exact path="/ourstory" element={<OurStory />} />
                         <Route exact path="/ourproducts" element={<OurProducts />} />
                         <Route exact path="/contactus" element={<ContactUs />} />
+                        
+                        {/* For testing components only */}
+                        <Route exact path="/customerinfo" element={<CustomerInfo />} />
                     </Routes>
                 </div>
                 <Footer />
