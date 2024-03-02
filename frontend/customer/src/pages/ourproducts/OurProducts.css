@@ -38,6 +38,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
   margin: 1rem auto 1.625rem auto;
   width: 90%;
   aspect-ratio: 1/1;
@@ -48,6 +49,13 @@
   width: 100%;
   height: 100%;
   object-fit: fill;
+}
+
+.product-image-inner-line {
+  position: absolute;
+  width: 23.125rem;
+  aspect-ratio: 1/1;
+  border: 5px solid white;
 }
 
 .product-snippet-details {

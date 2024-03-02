@@ -17,6 +17,7 @@ const OurProducts = () => {
                     {/* Products Template */}
                     <div className="product-snippet">
                         <div className="product-snippet-image-container cake">
+                            <div className="product-image-inner-line"></div>
                             <img src={sampleProductImg1} alt="Carrot Cake" className="product-snippet-image" />
                         </div>
                         <div className="product-snippet-details">
@@ -27,6 +28,7 @@ const OurProducts = () => {
                     </div>
                     <div className="product-snippet">
                         <div className="product-snippet-image-container cake">
+                            <div className="product-image-inner-line"></div>
                             {/* <img src={} alt={} /> className="product-snippet-image" */}
                         </div>
                         <div className="product-snippet-details">
@@ -44,6 +46,7 @@ const OurProducts = () => {
                     {/* Products Template */}
                     <div className="product-snippet">
                         <div className="product-snippet-image-container cake">
+                            <div className="product-image-inner-line"></div>
                             <img src={sampleProductImg2} alt="Sourdough Bread" className="product-snippet-image" />
                         </div>
                         <div className="product-snippet-details">
@@ -52,6 +55,7 @@ const OurProducts = () => {
                         </div>
                         <div className="order-product-button">order now</div>
                     </div>
+
                     <div className="product-snippet">
                         <div className="product-snippet-image-container cake">{/* <img src={} alt={} /> */}</div>
                         <div className="product-snippet-details">
