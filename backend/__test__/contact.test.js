@@ -43,7 +43,6 @@ describe('Contact Functions', () => {
             };
     
             saveStub = sinon.stub(Contact.prototype,'save').resolves(expectedSavedContact);
-            console.log(saveStub);
     
             await contactController.createContact(req, res);
     

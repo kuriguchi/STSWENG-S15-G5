@@ -1,6 +1,6 @@
-var mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
-var OrderSchema = new mongoose.Schema({
+const OrderSchema = new mongoose.Schema({
     orderNum: {
         type: String,
         default: 'Unknown Order',
@@ -22,7 +22,7 @@ var OrderSchema = new mongoose.Schema({
         required: true
     },
 
-    email: {
+    email: { 
         type: String,
         required: true
     },
@@ -44,7 +44,7 @@ var OrderSchema = new mongoose.Schema({
         default: 'None'
     },
 
-    orderDes: {
+    orderDescription: {
         type: String,
         default: 'None'
     }, 

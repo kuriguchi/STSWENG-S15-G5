@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@faker-js/faker": "^8.4.1",
     "cors": "^2.8.5",
     "dotenv": "^16.4.1",
     "express": "^4.18.2",
@@ -13,7 +14,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "jest --watch --color --verbose --coverage"
+    "test": "jest --watchAll --color --verbose --coverage"
   },
   "author": "",
   "license": "ISC",
