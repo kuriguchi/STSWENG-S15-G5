@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { BrowserRouter as Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 // components
@@ -58,7 +58,7 @@ const Home = () => {
             </div>
             <p className="tagline">no mistake with mis&apos;cake</p>
 
-            <img src={middle_partition} alt="middle-partition" className="partition-image" />
+            <img src={middle_partition} role="middle-partition" alt="middle-partition" className="partition-image" />
 
             <div className="featured-products-section">
                 <div className="featured-products-left">
@@ -132,4 +132,4 @@ const Home = () => {
     );
 };
 
-export default Home;
+export {ViewProdBtn, Home};

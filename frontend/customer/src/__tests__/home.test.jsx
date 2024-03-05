@@ -5,17 +5,17 @@ describe('The carousel image in homepage', () => {
     test('alt contains the correct value', () => {
         render(<Home/>);
 
-        const carousel_element = screen.getByRole('img_carousel');
+        const carousel_element = screen.getByRole('middle-partition');
 
-        expect(carousel_element.alt).toContain('image-carousel');
+        expect(carousel_element.alt).toContain('middle-partition');
     });
 
     test('src contains the correct value', () => {
         render(<Home/>);
 
-        const carousel_element = screen.getByRole('img_carousel');
+        const carousel_element = screen.getByRole('middle-partition');
 
-        expect(carousel_element.src).toContain('http://localhost/img1.png');
+        expect(carousel_element.src).toContain('http://localhost/middle_partition_header.svg');
     });
 });
 
