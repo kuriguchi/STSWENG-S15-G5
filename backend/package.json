@@ -13,7 +13,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "jest --watch --color"
+    "test": "jest --watch --color --verbose --coverage"
   },
   "author": "",
   "license": "ISC",

@@ -5,7 +5,6 @@ const mongoose = require('mongoose');
 const controller = require('../controllers/controller');
 
 describe('Contact Functions', () => {
-
     describe('Create Function', () =>{
         let saveStub;
         let req;

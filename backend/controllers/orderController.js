@@ -5,7 +5,7 @@ const Order=  require('../models/OrderModel.js');
 const mongoose = require('mongoose');
 
 const orderController = {
-    postOrder: async function(req, res){
+    createOrder: async function(req, res){
         const formData = req.body;
         const newData = new Order(formData);
 
