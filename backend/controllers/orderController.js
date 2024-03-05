@@ -35,7 +35,7 @@ const orderController = {
         }
     }, 
 
-    DeleteOrder: async function (req, res) {
+    deleteOrder: async function (req, res) {
         const query = req.params.orderId;
 
         try {
