@@ -9,7 +9,7 @@ const contactController = {
         const contact = req.body;
         const newContact = new Contact(contact);
     
-        newContact.save()
+        await newContact.save()
             .then((savedContact) => {
                 res.status(201).json(savedContact);
             })
