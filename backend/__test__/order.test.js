@@ -46,7 +46,7 @@ describe('Order Controller', () => {
     });
 
     describe('Adding new order', () => {
-        describe('Given a valid order', () => {
+        describe('When there is a valid order', () => {
             beforeEach(() => {
                 
                 expectedResult = req.body;
@@ -73,7 +73,7 @@ describe('Order Controller', () => {
     });
 
     describe('Updating an order', () => {
-        describe('Given a valid order ID and updated order details', () => {
+        describe('When there is a valid order ID and updated order details', () => {
 
             beforeEach(() => {                
                 req.params = { orderId: req.body.orderNum };
@@ -99,7 +99,7 @@ describe('Order Controller', () => {
             });
         });
 
-        describe('Given an invalid order ID', () => {
+        describe('When there is an invalid order ID', () => {
             beforeEach(() => {                
                 req.params = { orderId: req.body.orderNum };
             });
@@ -118,7 +118,7 @@ describe('Order Controller', () => {
 
         });
 
-        describe('Given an error when updating the order', () => {
+        describe('When there is an error updating the order', () => {
             beforeEach(() => {                
                 req.params = { orderId: req.body.orderNum };
             });
@@ -139,7 +139,7 @@ describe('Order Controller', () => {
     });
 
     describe('Deleting an order', () => {
-        describe('Given a valid order ID', () => {
+        describe('When there is a valid order ID', () => {
             beforeEach(() => {
                 req.params = { orderId: req.body.orderNum };
                 expectedResult = req.body;
@@ -164,7 +164,7 @@ describe('Order Controller', () => {
             });
         });
 
-        describe('Given an invalid order ID', () => {
+        describe('When there is an invalid order ID', () => {
             beforeEach(() => {
                 req.params = { orderId: req.body.orderNum };
             });
@@ -182,7 +182,7 @@ describe('Order Controller', () => {
             });
         });
 
-        describe('Given an error when deleting the order', () => {
+        describe('When there is an error deleting the order', () => {
             beforeEach(() => {                
                 req.params = { orderId: req.body.orderNum };
             });
@@ -197,6 +197,47 @@ describe('Order Controller', () => {
                 const sampleError = new Error('Internal Server Error');
                 orderStub = sinon.stub(Order, 'deleteOne').throws(sampleError);
                 await orderController.deleteOrder(req, res);
+                sinon.assert.calledWith(res.send, sampleError);
+            });
+        });
+    });
+
+    describe('Getting all orders', () => {
+        describe('When there are orders in the database', () => {
+            it('should return all orders', async () => {
+                const orders = [createRandomOrder(), createRandomOrder()];
+                orderStub = sinon.stub(Order, 'find').resolves(orders);
+                await orderController.getAllOrders({}, res);
+                sinon.assert.calledWith(res.json, orders);
+            });
+        });
+
+        describe('When there are no orders in the database', () => {
+            it('should return an empty array', async () => {
+                orderStub = sinon.stub(Order, 'find').resolves([]);
+                await orderController.getAllOrders({}, res);
+                sinon.assert.calledWith(res.json, []);
+            });
+        });
+
+        describe('When an error occurs while retrieving orders', () => {
+
+            afterEach(() => {
+                if (orderStub) {
+                    orderStub.restore();
+                }
+            });
+
+            it('should return status code 500', async () => {
+                orderStub = sinon.stub(Order, 'find').throws(new Error('Internal Server Error'));
+                await orderController.getAllOrders({}, res);
+                sinon.assert.calledWith(res.status, 500);
+            });
+
+            it('should return error message', async () => {
+                const sampleError = new Error('Internal Server Error');
+                orderStub = sinon.stub(Order, 'find').throws(sampleError);
+                await orderController.getAllOrders({}, res);
                 sinon.assert.calledWith(res.send, sampleError);
             });
         });
