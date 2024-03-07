@@ -9,9 +9,9 @@ const app = express();
 app.get('/favicon.ico', controller.getFavicon);
 app.get('/', controller.getIndex);
 
-app.post('/postOrder', orderController.postOrder);
+app.post('/postOrder', orderController.createOrder);
 app.post('/updateOrder/:orderId', orderController.updateOrder);
-app.get('/deleteOrder/:orderId', orderController.DeleteOrder);
+app.get('/deleteOrder/:orderId', orderController.deleteOrder);
 app.get('/getAllOrders', orderController.getAllOrders);
 
 app.post('/createContact', contactController.createContact);
