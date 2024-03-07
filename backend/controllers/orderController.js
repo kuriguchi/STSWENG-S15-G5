@@ -28,7 +28,7 @@ const orderController = {
             if(!updatedOrder){
                 res.status(404).json({error: 404, message: 'Order not found.'});
             } else {
-                res.json(updatedOrder);
+                res.status(200).json(updatedOrder);
             }
         } catch (err){
             return res.status(500).send(err);
@@ -44,7 +44,7 @@ const orderController = {
             if(!orderToDelete){
                 res.status(404).json({error: 404, message: 'Order not found.'});
             } else {
-                res.json(orderToDelete);
+                res.status(200).json(orderToDelete);
             }
         } catch(err){
             return res.status(500).send(err);
