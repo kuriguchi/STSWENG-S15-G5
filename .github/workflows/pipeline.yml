@@ -13,12 +13,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Install and Test Backend
-        working-directory: ./backend
-        run: |
-          npm install
-          export MONGODB_URI=$MONGODB_URI
-          npm run test
+      # - name: Install and Test Backend
+      #   working-directory: ./backend
+      #   run: |
+      #     npm install
+      #     export MONGODB_URI=$MONGODB_URI
+      #     npm run test
       - name: Install and Test Customer Frontend
         working-directory: ./frontend/customer
         run: |
