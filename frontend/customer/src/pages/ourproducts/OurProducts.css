@@ -1,0 +1,104 @@
+.product-page-banner {
+  margin: 0 auto;
+  margin-top: 2.125rem;
+  margin-bottom: 5.375rem;
+
+  width: 85%;
+  max-width: 120rem;
+}
+
+.cake-products-section,
+.baked-products-section {
+  margin: auto;
+  margin-bottom: 5.625rem;
+  width: 80%;
+  min-width: 63.25rem;
+  max-width: 100rem;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.partition-header {
+  margin: 0 auto 2.5rem auto;
+}
+
+.product-snippets-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.product-snippet {
+  border: 1px solid black;
+  width: 28.75rem;
+  height: 39.625rem;
+}
+
+.product-snippet-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin: 1rem auto 1.625rem auto;
+  width: 90%;
+  aspect-ratio: 1/1;
+  background-color: #ff991b;
+}
+
+.product-snippet-image {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+.product-image-inner-line {
+  position: absolute;
+  width: 23.125rem;
+  aspect-ratio: 1/1;
+  border: 5px solid white;
+}
+
+.product-snippet-details {
+  margin: 0 auto;
+  width: 50%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  font-family: "Pridi", sans-serif;
+}
+
+.product-snippet-title {
+  width: 18.75rem;
+  text-align: center;
+  margin: 0;
+  font-size: 1.875rem;
+  font-weight: 400;
+}
+
+.product-snippet-price {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+
+.order-product-button {
+  all: unset;
+  width: 10.375rem;
+  height: 2.125rem;
+  margin: 1.625rem auto 2.625rem auto;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #fd5001;
+  border-radius: 1.25rem;
+
+  color: white;
+  font-family: "Fjalla one", sans-serif;
+  font-size: 0.94rem;
+
+  cursor: pointer;
+}

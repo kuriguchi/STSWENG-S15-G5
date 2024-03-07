@@ -13,12 +13,12 @@ const ImageCarousel = ({ imageUrls }) => {
     useEffect(() => {
         const timer = setTimeout(() => {
             setImageIndex((prevIndex) => (prevIndex + 1) % imageUrls.length);
-        }, 5000);
+        }, 10000);
         return () => clearTimeout(timer);
     }, [imageIndex, imageUrls.length]);
 
     return (
-        <div className="image-carousel">
+        <div className="image-carousel" data-testid="image-carousel">
             <div className="carousel-image-container">
                 <div
                     style={{
@@ -29,11 +29,13 @@ const ImageCarousel = ({ imageUrls }) => {
                         overflow: 'hidden',
                     }}
                 >
-                    {imageUrls.map((url) => (
+                    {imageUrls.map((url, index) => (
                         <img
                             key={url}
                             src={url}
                             className="carousel-image"
+                            alt="carousel image"
+                            data-testid={`carousel-image-${index}`}
                             style={{
                                 transform: `translateY(${-100 * imageIndex}%)`,
                             }}
