@@ -52,7 +52,6 @@ const ProductDetails = () => {
                             </div>
                         </div>
                         <div className="main-product-image-container">
-                            {/* image carousel to fix */}
                             <div className="main-product-image-wrapper">
                                 <img src={img6} alt="main product" className="main-product-image" />
                             </div>
