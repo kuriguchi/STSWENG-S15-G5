@@ -27,7 +27,7 @@ jobs:
       - name: Build Customer Frontend Docker Image
         working-directory: ./frontend/customer
         run: |
-          docker build -t kuriguchi/stsweng-g5:customer_frontend-${{github.run_number}}
+          docker build -t kuriguchi/stsweng-g5:customer_frontend-${{github.run_number}}  .
       # - name: Build Customer Server Docker Image
       #   working-directory: ./backend
       #   run: |
