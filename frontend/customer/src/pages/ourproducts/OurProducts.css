@@ -3,7 +3,7 @@
   margin-top: 2.125rem;
   margin-bottom: 5.375rem;
 
-  width: 90%;
+  width: 85%;
   max-width: 120rem;
 }
 
@@ -20,7 +20,7 @@
 }
 
 .partition-header {
-  margin: 0 auto 2rem auto;
+  margin: 0 auto 2.5rem auto;
 }
 
 .product-snippets-container {
@@ -84,6 +84,7 @@
 }
 
 .order-product-button {
+  all: unset;
   width: 10.375rem;
   height: 2.125rem;
   margin: 1.625rem auto 2.625rem auto;

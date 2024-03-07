@@ -1,0 +1,181 @@
+main {
+  margin: auto;
+  max-width: 160rem;
+}
+
+.breadcrumbs-container {
+  width: 80%;
+  margin: 2.5rem auto 0 auto;
+}
+
+.breadcrumbs span,
+.breadcrumbs a {
+  color: #f2784d;
+  font-family: "Pridi", sans-serif;
+  font-size: 0.75rem;
+
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.product-details-name {
+  width: 80%;
+  text-align: left;
+  font-family: "Pridi", sans-serif;
+  font-size: 2.188rem;
+  font-weight: 500;
+  color: black;
+}
+
+.product-details-section {
+  margin-top: 0.063rem;
+  width: 80%;
+  max-width: 120rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+/* left side */
+.product-details-left-panel {
+  width: 54%;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-images-section {
+  display: flex;
+  flex-direction: row;
+}
+
+.product-thumbnails-container {
+  display: flex;
+  flex-direction: column;
+  width: 4.75rem;
+  height: 31.4375rem;
+  justify-content: space-between;
+}
+
+.product-thumbnail-wrapper {
+  display: flex;
+  width: 4.75rem;
+  height: 4.75rem;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+
+  border-radius: 0.625rem;
+  border: 3px solid rgba(237, 75, 1, 0.57);
+}
+
+.main-product-image-container {
+  margin-left: 2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.main-product-image-wrapper {
+  display: inline-flex;
+  align-items: center;
+  width: 31.4rem;
+  aspect-ratio: 1/1;
+  border-radius: 0.625rem;
+  border: 3px solid rgba(237, 75, 1, 0.57);
+  background: #fff;
+
+  overflow: hidden;
+}
+
+.main-product-image {
+  width: 100%;
+  background: lightgray 50% / cover no-repeat;
+}
+
+.main-product-image-container .elipses {
+  margin-left: 1.25rem;
+  width: 1.5rem;
+  height: 8.375rem;
+  flex-shrink: 0;
+}
+
+.orange-bar {
+  margin-top: 1.44rem;
+  width: 38.53rem;
+
+  background-color: #f2784d;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))
+    drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  flex: 1;
+}
+
+/* right side */
+.product-details-right-panel {
+  width: 41%;
+  display: flex;
+  flex-direction: column;
+
+  gap: 1.875rem;
+}
+
+.product-details.detail-container {
+  width: 100%;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+  padding: 1.563rem 2.5rem;
+
+  background-color: white;
+}
+
+.product-details.detail-container h3 {
+  margin: 0;
+  font-family: "Pridi", sans-serif;
+  font-size: 1.563rem;
+  font-weight: 500;
+  color: #ed4b01;
+}
+
+.product-details.detail-container p {
+  margin: 0;
+  font-family: "Pridi", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: black;
+}
+
+.product-details.button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.price-size {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.125rem;
+}
+
+.price-size span {
+  font-weight: 300;
+}
+
+.price-size b {
+  font-weight: 500;
+}
+
+.orange-button {
+  border: 0;
+  box-sizing: border-box;
+  width: 11.25rem;
+  height: 2.875rem;
+  border-radius: 1.563rem;
+  background-color: #ff7e4f;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
+
+  color: white;
+  font-family: "Pridi", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+
+  cursor: pointer;
+}

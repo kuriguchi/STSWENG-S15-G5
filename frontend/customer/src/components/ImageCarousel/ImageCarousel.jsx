@@ -13,7 +13,7 @@ const ImageCarousel = ({ imageUrls }) => {
     useEffect(() => {
         const timer = setTimeout(() => {
             setImageIndex((prevIndex) => (prevIndex + 1) % imageUrls.length);
-        }, 5000);
+        }, 10000);
         return () => clearTimeout(timer);
     }, [imageIndex, imageUrls.length]);
 
