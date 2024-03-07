@@ -23,7 +23,7 @@ jobs:
         working-directory: ./frontend/customer
         run: |
           npm install
-          npm run test --exit
+          npm run test -- --no-watch
       - name: Build Customer Frontend Docker Image
         working-directory: ./frontend/customer
         run: |
