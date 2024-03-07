@@ -1,19 +1,11 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
-
-// components
-import ImageCarousel from '../../components/ImageCarousel/ImageCarousel';
-
 //import css
 import './Home.css';
 
+//import router
+import { BrowserRouter as Link } from 'react-router-dom';
+
 // images
 import img1 from '../../assets/carousel-imgs/img1.png';
-import img2 from '../../assets/carousel-imgs/img2.jpg';
-import img3 from '../../assets/carousel-imgs/img3.jpg';
-import img4 from '../../assets/carousel-imgs/img4.jpg';
-
 import middle_partition from '../../assets/middle_partition_header.svg';
 import windowframeimg1 from '../../assets/featuredproducts-imgs/windowframeimg1.png';
 import windowframeimg2 from '../../assets/featuredproducts-imgs/windowframeimg2.png';
@@ -25,36 +17,16 @@ import seemoreimg1 from '../../assets/seemore-imgs/seemoreimg1.png';
 import seemoreimg2 from '../../assets/seemore-imgs/seemoreimg2.png';
 
 const ViewProdBtn = ({ to, children, handleClick }) => {
-    return (
-        <Link to={to}>
-            <button onClick={handleClick} role="viewProdBtn" className="orange-rounded-button">
-                <div className="inner-white-line">{children}</div>
-            </button>
-        </Link>
-    );
-};
-
-ViewProdBtn.propTypes = {
-    to: PropTypes.string.isRequired,
-    children: PropTypes.string.isRequired,
-    handleClick: PropTypes.func,
+    return <Link to={to}><button onClick={handleClick} role="viewProdBtn" className="orange-rounded-button"><div className="inner-white-line">{children}</div></button></Link>
 };
 
 const Home = () => {
-    const [isHovered, setIsHovered] = useState(false);
-
-    const handleMouseEnter = () => {
-        setIsHovered(true);
-    };
-
-    const handleMouseLeave = () => {
-        setIsHovered(false);
-    };
-
     return (
         <main>
-            <div className="image-carousel-container">
-                <ImageCarousel imageUrls={[img1, img2, img3, img4]} />
+            <div className="image-carousel">
+                <img role="img_carousel" src={img1} alt="image-carousel" className="carousel-image" />
+
+                <div className="carousel-dots">{/* to fix */}</div>
             </div>
             <p className="tagline">no mistake with mis&apos;cake</p>
 
@@ -95,15 +67,8 @@ const Home = () => {
                         <p className="text-section-text-regular">Explore delicious options.</p>
                         <p className="text-section-text-regular">Choose your best moments.</p>
                     </div>
-                    <div className="windowframe" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+                    <div className="windowframe">
                         <img src={windowframeimg4} alt="windowframeimg4" className="windowframe-image" />
-                        {isHovered && (
-                            <div className="windowframe-hover-text">
-                                <span className="hover-text-title">DOUBLE CHOCOLATE</span>
-                                <span className="hover-text-title">CAKE</span>
-                                <span className="hover-text-price">starts at Php 2000</span>
-                            </div>
-                        )}
                     </div>
                 </div>
             </div>
@@ -132,4 +97,4 @@ const Home = () => {
     );
 };
 
-export default Home;
+export {ViewProdBtn, Home};

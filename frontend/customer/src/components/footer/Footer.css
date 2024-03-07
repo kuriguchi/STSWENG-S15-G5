@@ -1,10 +1,10 @@
-footer {
+.PAGE-FOOTER {
   height: 100px;
   width: 100%;
   display: flex;
 }
 
-footer .overlap-group {
+.PAGE-FOOTER .overlap-group {
   background-color: #ffffff;
   height: 88px;
   width: 100%;
@@ -15,7 +15,7 @@ footer .overlap-group {
   align-items: center;
 }
 
-footer .text-wrapper {
+.PAGE-FOOTER .text-wrapper {
   color: #fd5001;
   font-family: "Fjalla One", Helvetica;
   font-size: 20px;
@@ -25,7 +25,7 @@ footer .text-wrapper {
   width: 204px;
 }
 
-footer .social-media-icons {
+.PAGE-FOOTER .social-media-icons {
   display: flex;
   height: 31px;
   width: 113px;
@@ -34,13 +34,23 @@ footer .social-media-icons {
   justify-content: space-between;
 }
 
-footer .social-media-icons img {
+.PAGE-FOOTER .instagram {
   display: block;
   height: 31px;
   object-fit: cover;
   width: 31px;
 }
 
-footer .social-media-icons img:hover {
-  cursor: pointer;
+.PAGE-FOOTER .facebook {
+  display: block;
+  height: 31px;
+  object-fit: cover;
+  width: 31px;
+}
+
+.PAGE-FOOTER .messenger {
+  display: block;
+  height: 28px;
+  object-fit: cover;
+  width: 29px;
 }
