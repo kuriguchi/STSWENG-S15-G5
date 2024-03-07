@@ -13,9 +13,12 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "jest --watch --color --verbose --coverage"
+    "test": "jest --watchAll --color --verbose --coverage "
   },
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "@faker-js/faker": "^8.4.1"
+  }
 }
