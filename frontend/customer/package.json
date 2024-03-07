@@ -8,7 +8,7 @@
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "test": "react-scripts test --watchAll --coverage"
+    "test": "react-scripts test --watchAll --coverage --detectOpenHandles"
   },
   "dependencies": {
     "@testing-library/jest-dom": "^6.4.2",
