@@ -1,0 +1,47 @@
+footer {
+  margin-top: 5rem;
+  height: 100px;
+  width: 100%;
+  display: flex;
+}
+
+footer .overlap-group {
+  background-color: #ffffff;
+  height: 88px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 4.375rem;
+  margin-right: 4.375rem;
+  align-items: center;
+}
+
+footer .text-wrapper {
+  color: #fd5001;
+  font-family: "Fjalla One", Helvetica;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: normal;
+  width: 204px;
+}
+
+footer .social-media-icons {
+  display: flex;
+  height: 31px;
+  width: 113px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+footer .social-media-icons img {
+  display: block;
+  height: 31px;
+  object-fit: cover;
+  width: 31px;
+}
+
+footer .social-media-icons img:hover {
+  cursor: pointer;
+}

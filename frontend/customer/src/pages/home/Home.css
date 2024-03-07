@@ -1,0 +1,309 @@
+main {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-carousel-container {
+  width: 100%;
+  max-width: 141rem;
+  margin: auto;
+}
+
+.tagline {
+  font-family: "Fjalla One", sans-serif;
+  font-size: 1.875rem;
+  color: #fd5001;
+  margin-top: 0.875rem;
+  margin-bottom: 2rem;
+}
+
+.partition-image {
+  width: 85%;
+  max-width: 120rem;
+  margin: auto;
+}
+
+/* Featured products section */
+
+.featured-products-section {
+  display: flex;
+  justify-content: space-between;
+  width: 83%;
+  max-width: 120rem;
+  margin: auto;
+  margin-top: 1.313rem;
+}
+
+.featured-products-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 32%;
+  max-width: 26.875rem;
+}
+
+.featured-products-middle {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 32%;
+  max-width: 26.875rem;
+}
+
+.featured-products-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 32%;
+  max-width: 26.875rem;
+}
+
+.windowframe {
+  width: 100%;
+  max-width: 26.875rem;
+  border: 2px solid #dfa5a5;
+  border-radius: 10px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  position: relative;
+}
+
+.windowframe::before,
+.windowframe::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.windowframe::before {
+  background-color: #5a4226;
+  opacity: 0;
+}
+
+.windowframe::after {
+  background-color: #2a1111;
+  opacity: 0;
+}
+
+.windowframe:hover::before {
+  opacity: 0.6;
+}
+
+.windowframe:hover::after {
+  opacity: 0.6;
+}
+
+.windowframe-image {
+  width: 100%;
+  height: 100%;
+}
+
+.windowframe.rounded {
+  border-top-left-radius: 20000px;
+  border-top-right-radius: 20000px;
+}
+
+.windowframe-hover-text {
+  z-index: 1000;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hover-text-title {
+  text-align: center;
+  font-family: "Pridi", "Roboto", sans-serif;
+  font-size: 2.188rem;
+  font-weight: 600;
+  color: white;
+  width: 85%;
+}
+
+.hover-text-price {
+  text-align: center;
+  font-family: "Pridi", "Roboto", sans-serif;
+  font-size: 1.563rem;
+  font-weight: 200;
+  color: white;
+}
+
+.featured-products-text-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.text-section-header-big {
+  width: 100%;
+  text-align: left;
+  font-family: "Fjalla One", sans-serif;
+  font-size: 4rem;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.text-section-header-regular {
+  font-family: "Pridi", "Roboto", sans-serif;
+  font-size: 1.563rem;
+  font-weight: 500;
+  white-space: nowrap;
+  margin: 1.125rem 0 0.4rem 0;
+}
+
+.text-section-text-regular {
+  width: 100%;
+  font-family: "Pridi", "Roboto", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 200;
+  margin: 0.25rem 0;
+}
+
+.text-section-plain-text-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: white;
+  border: 1px solid black;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Specific plain text areas */
+#plain-text-area1 {
+  max-width: 100%;
+  height: 13.274rem;
+  max-height: 13.274rem;
+
+  margin-bottom: 0.625rem;
+}
+
+.text-section-plain-text-area p {
+  width: 45ch;
+  text-align: center;
+  font-family: "Pridi", "Roboto", sans-serif;
+  font-size: 0.938rem;
+  font-weight: 200;
+  margin: 0 1.688rem 0 1.688rem;
+}
+
+.orange-rounded-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 10.656rem;
+  height: 2.374rem;
+  border-radius: 1.25rem;
+  background-color: #fd5001;
+  border: none;
+  margin: 0;
+  padding: 0;
+
+  font-family: "Fjalla One", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: white;
+}
+
+.orange-rounded-button:hover {
+  cursor: pointer;
+}
+
+.inner-white-line {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 10.407rem;
+  height: 2.11rem;
+  border-radius: 1.25rem;
+  border: 1px solid white;
+}
+
+/* See more section  */
+
+#seemore_partition {
+  margin: 4.125rem 0 3.938rem 0;
+}
+
+.seemore-section {
+  position: relative;
+  width: 83.438rem;
+  height: 91.063rem;
+  margin: auto;
+}
+
+.seemore-image {
+  position: absolute;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+#seemoreimg1 {
+  top: 0;
+  left: 0;
+}
+
+.seemore-header {
+  position: absolute;
+  width: 19.625rem;
+  height: 11.688rem;
+  color: #fd5001;
+  font-family: "Fjalla One", sans-serif;
+  font-size: 2.813rem;
+  text-align: left;
+
+  top: 5.5rem;
+  left: 59.75rem;
+}
+
+.seemore-message {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 32.938rem;
+  height: 20.188rem;
+  background-color: white;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+
+  font-family: "Pridi", "Roboto", sans-serif;
+  font-size: 1.563rem;
+  font-weight: 300;
+}
+
+#seemoremessage1 {
+  top: 29.688rem;
+  left: 49rem;
+}
+
+.seemore-message-body {
+  margin: 0 4.063rem 0 4.063rem;
+}
+
+.seemore-message-author {
+  margin: 2rem 0 0 0;
+}
+
+#seemoreimg2 {
+  top: 46.375rem;
+  left: 23.125rem;
+}
+
+#seemoremessage2 {
+  top: 70.875rem;
+  left: 3.75rem;
+}

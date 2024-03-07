@@ -1,15 +1,11 @@
-const db = require('../models/db.js');
-
-const Order=  require('../models/OrderModel.js');
-
-const mongoose = require('mongoose');
+const Order =  require('../models/OrderModel.js');
 
 const orderController = {
-    postOrder: async function(req, res){
+    createOrder: async function(req, res){
         const formData = req.body;
         const newData = new Order(formData);
 
-        newData.save()
+        await newData.save()
             .then((savedOrder) => {
                 res.status(201).json(savedOrder);
             })
@@ -35,7 +31,7 @@ const orderController = {
         }
     }, 
 
-    DeleteOrder: async function (req, res) {
+    deleteOrder: async function (req, res) {
         const query = req.params.orderId;
 
         try {
@@ -54,7 +50,6 @@ const orderController = {
     getAllOrders: async function(req, res){
         try{
             const orders = await Order.find();
-
             res.json(orders);
         } catch(err){
             return res.status(500).send(err);   
