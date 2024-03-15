@@ -1,10 +1,26 @@
 //import dependencies
 import React from 'react';
+import { useState } from 'react';
 
 //import css
 import './CustomerInfo.css';
 
+//import components
+import Button from '../../../../components/selectBtn/Button';
+import Select from '../../../../components/selectBtn/Select';
+
 function CustomerInfo() {
+    const [isSelectCityVisible, setIsSelectCityVisible] = useState(false)
+    const [isSelectStateVisible, setIsSelectStateVisible] = useState(false);
+
+    const toggleSelectCityVisibility = (event) => {
+        setIsSelectCityVisible(!isSelectCityVisible);
+    }
+
+    const toggleSelectStateVisibility = (event) => {
+        setIsSelectStateVisible(!isSelectStateVisible);
+    }
+
     return(
         <>
             <div className="customer-info-layout">
@@ -133,9 +149,17 @@ function CustomerInfo() {
                                     <div className="asterisk-color pridi-medium-15">*</div>
                                 </div>
 
-                                
-                                <input className="input-box pridi-medium-12 input-padding-10" style={{paddingLeft: "52px"}} id="city" name="city" type="dropdown" placeholder='Select City / Municipality'/>
+                                <div className="select-box pridi-medium-12 input-padding-10">
+                                    <div className="placeholder-text">Select City / Municipality...</div>
+                                    <div className="spacer-25"></div>
+                                    <div className="dropdown-box">
+                                        <Button onClick={toggleSelectCityVisibility} />
+                                    </div>
+                                </div>
 
+                                <div className="br-10"></div>
+
+                                <Select isVisible={isSelectCityVisible} />
                             </div>
 
                             <div className="spacer-30"></div>
@@ -146,15 +170,23 @@ function CustomerInfo() {
                                     <div className="spacer-5"></div>
                                     <div className="asterisk-color pridi-medium-15">*</div>
                                 </div>
-                                
-                                <input className="pridi-medium-12 input-padding-10" id="state" name="state" type="text" placeholder='Select State / Province....'/>
-                            </div>
 
+                                <div className="select-box pridi-medium-12 input-padding-10">
+                                    <div className="placeholder-text">Select State / Province...</div>
+                                    <div className="spacer-25"></div>
+                                    <div className="dropdown-box">
+                                        <Button onClick={toggleSelectStateVisibility} />
+                                    </div>
+                                </div>
+
+                                <div className="br-10"></div>
+
+                                <Select isVisible={isSelectStateVisible} />
+                            </div>
                         </div>
 
                         <div className="br-30"></div>
-
-                        <button className="orange-btn pridi-medium-20 font-white">Place Order</button>
+                        <button type="submit" className="orange-btn pridi-medium-20 font-white">Place Order</button>
                     </form>
                 </div>
             </div>

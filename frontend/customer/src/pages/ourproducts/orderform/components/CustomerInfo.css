@@ -23,7 +23,6 @@
     padding-left: 11px;
     padding-right: 8px;
     margin-left: 42px;
-    top: -20px;
 
     background-color: white;   
     box-shadow: none;
@@ -31,6 +30,7 @@
 }
 
 .order-form-layout{
+    position: relative;
     width: auto;
     align-self: center;
     z-index: 1;
@@ -79,4 +79,74 @@
     background: #FF7E4F; 
 
     border: none;
+}
+
+.dropdown-box{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 31.672px;
+    height: 25px;
+}
+
+.orange-dropdown-btn{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 31.672px;
+    height: 25px;
+    flex-shrink: 0; 
+
+    border-radius: 5px;
+    background: #FF7E4F; 
+
+    color: white;
+    text-align: center;
+    font-family: Actor;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal; 
+
+    border: none;
+}
+
+.dropdown-icon{
+    position: relative;
+    width: 17px;
+    height: 15.627px;
+    flex-shrink: 0;
+
+    
+
+    color: white;
+    text-align: center;
+    font-family: Actor;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal; 
+
+    
+    transform: rotate(180deg);
+}
+
+.select-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.placeholder-text{
+    text-align: center;
+    color: rgba(187, 187, 187, 0.73);
+    font-family: Pridi;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
 }
