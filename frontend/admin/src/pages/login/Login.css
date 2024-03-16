@@ -6,18 +6,18 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+  box-sizing: border-box;
 }
 
 .background-wrapper {
-  margin: 3.12rem;
   background: url("../../assets/login_background.png") no-repeat;
-  background-size: contain;
   background-position: center;
+  background-size: 100% 100%;
   width: 100%;
   height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  place-items: center;
+  box-sizing: border-box;
 }
 
 .login-container {
