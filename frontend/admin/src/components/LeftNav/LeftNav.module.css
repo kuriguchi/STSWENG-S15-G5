@@ -1,0 +1,74 @@
+nav {
+  margin: 0;
+  background-color: #ee1717;
+  height: calc(100vh - 6.25rem);
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+}
+
+.dashboard h1 {
+  font-family: "Fjalla One", sans-serif;
+  font-size: 2rem;
+  font-weight: 400;
+  color: white;
+  text-align: center;
+  margin-top: 2.188rem;
+  margin-bottom: 2.188rem;
+}
+
+.nav-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  display: grid;
+  gap: 1.25rem;
+}
+
+.nav-list li {
+  background-color: white;
+  border-radius: 0.625rem;
+  padding-block: 1.25rem;
+  padding-inline: 3.25rem;
+  margin-inline: 1.25rem;
+
+  display: flex;
+  flex-direction: row;
+  gap: 1.125rem;
+
+  font-family: "Pridi", sans-serif;
+  font-size: 1.25rem;
+  color: black;
+}
+
+.nav-list .active {
+  margin-inline: 1.25rem -1rem;
+}
+
+.clock-container {
+  margin-block: auto 3.12rem;
+  margin-inline: 3.125rem;
+  padding-block: 0.875rem;
+  padding-left: 0.938rem;
+  background-color: white;
+  display: grid;
+
+  border-radius: 0.625rem;
+
+  font-family: "Pridi", sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  color: black;
+}
+
+.time-label {
+  font-size: 1.25rem;
+  margin-right: 3.438rem;
+}
+
+.date-label {
+  font-size: 1.25rem;
+  margin-right: 2.563rem;
+}

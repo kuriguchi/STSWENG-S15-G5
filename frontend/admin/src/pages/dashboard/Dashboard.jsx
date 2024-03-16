@@ -1,10 +1,8 @@
-import { useState, useEffect, useMemo } from 'react';
+import { useMemo } from 'react';
 import { format, startOfMonth, endOfMonth, eachDayOfInterval, getDay, isToday } from 'date-fns';
 
 import Header from '../../components/Header/Header.jsx';
-
-import calendarIcon from '../../assets/calendaricon.svg';
-import logoutIcon from '../../assets/logouticon.svg';
+import LeftNav from '../../components/LeftNav/LeftNav.jsx';
 
 import styles from './Dashboard.module.css';
 
@@ -34,23 +32,10 @@ const exampleOrders = [
 ];
 
 const Dashboard = () => {
-    const [time, setTime] = useState(new Date());
+    const date = new Date();
 
-    useEffect(() => {
-        const timer = setInterval(() => {
-            setTime(new Date());
-        }, 1000);
-
-        return () => {
-            clearInterval(timer);
-        };
-    }, []);
-
-    const formattedTime = format(time, 'hh : mm : ss');
-    const formattedDate = format(time, 'MM / dd / yyyy');
-
-    const firstDayOfMonth = startOfMonth(time);
-    const lastDayOfMonth = endOfMonth(time);
+    const firstDayOfMonth = startOfMonth(date);
+    const lastDayOfMonth = endOfMonth(date);
 
     const daysInMonth = eachDayOfInterval({
         start: firstDayOfMonth,
@@ -75,38 +60,12 @@ const Dashboard = () => {
         <>
             <Header />
             <main className={styles.dashboard}>
-                <nav>
-                    <h1>
-                        ADMIN VIEW <br /> CONTROL PANEL
-                    </h1>
-
-                    <ul className={styles['nav-list']}>
-                        <li className={styles.active}>
-                            <img src={calendarIcon} alt="calendarIcon" />
-                            Order Calendar
-                        </li>
-                        <li>
-                            <img src={logoutIcon} alt="logoutIcon" />
-                            Logout
-                        </li>
-                    </ul>
-
-                    <div className={styles['clock-container']}>
-                        <span>
-                            <span className={styles['time-label']}>Time</span>
-                            {formattedTime}
-                        </span>
-                        <span>
-                            <span className={styles['date-label']}>Date</span>
-                            {formattedDate}
-                        </span>
-                    </div>
-                </nav>
+                <LeftNav />
                 <div className={styles['calendar-container']}>
                     <div className={styles.calendar}>
                         <div className={styles['calendar-header']}>
-                            <h2>{time.toLocaleString('default', { month: 'long' })}</h2>
-                            <h3>{time.getFullYear()}</h3>
+                            <h2>{date.toLocaleString('default', { month: 'long' })}</h2>
+                            <h3>{date.getFullYear()}</h3>
                         </div>
                         <div className={styles['calendar-body']}>
                             {WEEKDAYS.map((day) => (
