@@ -1,0 +1,212 @@
+.dashboard {
+  display: grid;
+  grid-template-columns: 20rem 1fr;
+  align-items: start;
+  height: calc(100vh - 6.25rem);
+}
+
+.dashboard nav {
+  margin: 0;
+  background-color: #ee1717;
+  height: calc(100vh - 6.25rem);
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+}
+
+.dashboard h1 {
+  font-family: "Fjalla One", sans-serif;
+  font-size: 2rem;
+  font-weight: 400;
+  color: white;
+  text-align: center;
+  margin-top: 2.188rem;
+  margin-bottom: 2.188rem;
+}
+
+.dashboard .nav-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  display: grid;
+  gap: 1.25rem;
+}
+
+.dashboard .nav-list li {
+  background-color: white;
+  border-radius: 0.625rem;
+  padding-block: 1.25rem;
+  padding-inline: 3.25rem;
+  margin-inline: 1.25rem;
+
+  display: flex;
+  flex-direction: row;
+  gap: 1.125rem;
+
+  font-family: "Pridi", sans-serif;
+  font-size: 1.25rem;
+  color: black;
+}
+
+.dashboard .nav-list .active {
+  margin-inline: 1.25rem -1rem;
+}
+
+.dashboard .clock-container {
+  margin-block: auto 3.12rem;
+  margin-inline: 3.125rem;
+  padding-block: 0.875rem;
+  padding-left: 0.938rem;
+  background-color: white;
+  display: grid;
+
+  border-radius: 0.625rem;
+
+  font-family: "Pridi", sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  color: black;
+}
+
+.dashboard .time-label {
+  font-size: 1.25rem;
+  margin-right: 3.438rem;
+}
+
+.dashboard .date-label {
+  font-size: 1.25rem;
+  margin-right: 2.563rem;
+}
+
+.calendar-container {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+
+  color: black;
+}
+
+.calendar {
+  width: calc(100% - 2 * 3.125rem);
+  height: calc(100% - 2 * 2.5rem);
+
+  margin-block: 2.5rem;
+  margin-inline: 3.125rem;
+  padding-inline: 1.31rem;
+
+  border-radius: 1.25rem;
+  border: 1px solid #000;
+  background: #fff;
+  box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.4);
+}
+
+.calendar-header {
+  margin-top: 0.5rem;
+  margin-bottom: 0.2rem;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+}
+
+.calendar-header h2 {
+  margin: 0;
+  padding: 0;
+
+  color: #fd5001;
+  font-family: Selfie;
+  font-size: 3rem;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+}
+
+.calendar-header h3 {
+  position: absolute;
+  top: -1.8rem;
+  right: 0;
+
+  color: #fd5001;
+  font-family: Pridi;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.calendar-body {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.day-header {
+  margin-bottom: -0.1rem;
+  text-align: center;
+
+  height: 1.5rem;
+  color: #fd5001;
+  font-family: Pridi;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.5rem;
+}
+
+.day-cell {
+  padding-top: 0.7rem;
+  border: 1px solid #000;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.day {
+  margin-top: auto;
+  margin-bottom: 0.1rem;
+  margin-left: auto;
+  margin-right: 0.22rem;
+  color: #fd5001;
+  font-family: Pridi;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.5rem;
+}
+
+.current-day {
+  /* TO DO */
+  background-color: lightgrey;
+}
+
+.order-item {
+  border-radius: 100vw;
+  text-align: center;
+  margin-inline: 0.5rem;
+  margin-block: 0.25rem;
+  padding-block: 0.3rem;
+
+  color: #000;
+  font-family: Pridi;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+
+.cancelled {
+  background: #f00;
+}
+
+.pending {
+  background: #ff991b;
+}
+
+.completed {
+  background: #14cf11;
+}

@@ -1,5 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Pridi:wght@200;300;400;500;600;700&family=Roboto:wght@100&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap");
+@font-face {
+  font-family: "Selfie";
+  src: url("./assets/fonts/Selfie/Selfie_Regular.otf") format("opentype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Selfie";
+  src: url("./assets/fonts/Selfie/Selfie_Light.otf") format("opentype");
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "Selfie";
+  src: url("./assets/fonts/Selfie/Selfie_Black.otf") format("opentype");
+  font-weight: 900;
+}
 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
