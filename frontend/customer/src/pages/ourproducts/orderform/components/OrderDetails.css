@@ -1,0 +1,99 @@
+.order-details-box{
+    position: absolute;
+    display: flex;
+    flex-shrink: 0; 
+
+    fill: #FFF;
+}
+
+.order-details-layout{
+    display: flex;
+    flex-direction: column;
+    width: 615px;
+    height: 319px;
+    flex-shrink: 0;
+
+    margin: 100px;
+}
+
+.order-details-title{
+    position: relative;
+    width: max-content;
+    height: max-content;
+    padding-left: 11px;
+    padding-right: 8px;
+    margin-left: 42px;
+    bottom: 19px;
+
+    background-color: white;   
+    box-shadow: none;
+    z-index: 1;
+}
+
+.order-details-content{
+    display: flex;
+    position: relative;
+    width: auto;
+    align-self: center;
+    z-index: 1;
+}
+
+.order-details-form{
+    display: flex;
+    flex-direction: column;
+}
+
+.order-details-imgbox{
+    position: relative;
+    width: 194px;
+    height: 194px;
+    flex-shrink: 0;
+
+    border: 1px solid rgba(237, 75, 1, 0.60);
+    border-radius: 5px;
+}
+
+.order-details-imgbox img{
+    width: 100%;
+    border-radius: 5px;
+}
+
+.cake-order-detail{
+    width: 323px;
+}
+
+.size-qty-form{
+    display: flex;
+}
+
+.size-input-box{
+    display: flex;
+    flex-direction: column;
+}
+
+.qty-input-box{
+    display: flex;
+    flex-direction: column;
+}
+
+.order-select-size{
+    position: absolute;
+    right: 10px;
+}
+
+.qty-input-num{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 43px;
+    height: 33px;
+    flex-shrink: 0;
+
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.total-box{
+    display: flex;
+    justify-content: flex-end;
+}

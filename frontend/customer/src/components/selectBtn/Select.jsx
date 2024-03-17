@@ -5,9 +5,10 @@ import './Button.css';
 
 function Dropdown(props){
     return(
-        <div>
+        <div >
             {props.isVisible ? (
-                <ul className="select-item-container pridi-medium-15">
+                <ul className="select-item-container pridi-medium-15" 
+                    style={{"height": props.height, "width": props.width}}>
                     <li>Option 1</li>
                     <li>Option 2</li>
                     <li>Option 3</li>

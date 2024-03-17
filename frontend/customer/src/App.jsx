@@ -12,6 +12,7 @@ import Footer from './components/footer/Footer';
 
 //test components
 import CustomerInfo from './pages/ourproducts/orderform/components/CustomerInfo';
+import OrderDetails from './pages/ourproducts/orderform/components/OrderDetails';
 
 function App() {
     return (
@@ -27,6 +28,7 @@ function App() {
                         
                         {/* For testing components only */}
                         <Route exact path="/customerinfo" element={<CustomerInfo />} />
+                        <Route exact path="/orderdetails" element={<OrderDetails />} />
                     </Routes>
                 </div>
                 <Footer />

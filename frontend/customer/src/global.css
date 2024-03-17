@@ -122,6 +122,14 @@ body {
   width: 5px;
 }
 
+.spacer-10{
+  width: 10px;
+}
+
+.spacer-20{
+  width: 20px;
+}
+
 .spacer-25{
   width: 25px;
 }
@@ -130,8 +138,16 @@ body {
   width: 15px;
 }
 
+.br-5{
+  height: 5px;
+}
+
 .br-10{
   height: 10px;
+}
+
+.br-25{
+  height: 25px;
 }
 
 .br-50{
@@ -140,6 +156,10 @@ body {
 
 .br-30{
   height: 30px;
+}
+
+.br-35{
+  height: 35px;
 }
 
 .divider-100{
