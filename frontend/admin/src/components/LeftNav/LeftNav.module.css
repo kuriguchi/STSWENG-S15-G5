@@ -1,4 +1,4 @@
-nav {
+.left-nav {
   margin: 0;
   background-color: #ee1717;
   height: calc(100vh - 6.25rem);
@@ -8,7 +8,7 @@ nav {
   overflow: hidden;
 }
 
-.dashboard h1 {
+.left-nav h1 {
   font-family: "Fjalla One", sans-serif;
   font-size: 2rem;
   font-weight: 400;

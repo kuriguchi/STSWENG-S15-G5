@@ -4,6 +4,7 @@ import { format } from 'date-fns';
 import styles from './LeftNav.module.css';
 
 import calendarIcon from '../../assets/calendaricon.svg';
+import editIcon from '../../assets/editicon.svg';
 import logoutIcon from '../../assets/logouticon.svg';
 
 const LeftNav = () => {
@@ -23,7 +24,7 @@ const LeftNav = () => {
     const formattedDate = format(time, 'MM / dd / yyyy');
 
     return (
-        <nav>
+        <nav className={styles['left-nav']}>
             <h1>
                 ADMIN VIEW <br /> CONTROL PANEL
             </h1>
@@ -32,6 +33,10 @@ const LeftNav = () => {
                 <li className={styles.active}>
                     <img src={calendarIcon} alt="calendarIcon" />
                     Order Calendar
+                </li>
+                <li>
+                    <img src={editIcon} alt="editIcon" />
+                    Edit Contact
                 </li>
                 <li>
                     <img src={logoutIcon} alt="logoutIcon" />
