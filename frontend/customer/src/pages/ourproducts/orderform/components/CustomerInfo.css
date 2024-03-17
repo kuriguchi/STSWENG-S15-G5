@@ -11,9 +11,6 @@
     flex-direction: column;
     width: 630px;
     height: 631px;
-    
-    /* Temporary */
-    margin: 35px;
 }
 
 .customer-info-title{
@@ -119,8 +116,6 @@
     height: 15.627px;
     flex-shrink: 0;
 
-    
-
     color: white;
     text-align: center;
     font-family: Actor;
@@ -129,7 +124,6 @@
     font-weight: 400;
     line-height: normal; 
 
-    
     transform: rotate(180deg);
 }
 

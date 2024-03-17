@@ -3,9 +3,6 @@
 //import dependencies
 import React from 'react';
 
-//import css
-import './ODContainer.css';
-
 function OrderDetailsContainer(){
     return(
         <>
