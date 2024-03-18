@@ -4,20 +4,18 @@ import React from 'react';
 import './Button.css';
 
 function Dropdown(props){
+    const values = Object.values(props.list);
+
+    const renderValues = (values).map(function(value){
+        return <li style={{cursor: "default"}} onClick={() => props.handleChange(value)}>{value}</li>;
+    });
+
     return(
         <div >
             {props.isVisible ? (
                 <ul className="select-item-container pridi-medium-15" 
                     style={{"height": props.height, "width": props.width}}>
-                    <li>Option 1</li>
-                    <li>Option 2</li>
-                    <li>Option 3</li>
-                    <li>Option 4</li>
-                    <li>Option 5</li>
-                    <li>Option 6</li>
-                    <li>Option 7</li>
-                    <li>Option 8</li>
-                    <li>Option 9</li>
+                    { renderValues }
                 </ul>
             ) : null}
         </div>

@@ -52,9 +52,10 @@
 }
 
 .additional-box{
+    position: relative;
     display: flex;
     justify-content: center;
-    z-index: 1;
+    z-index: 0;
 }
 
 .additional-input{
@@ -66,7 +67,7 @@
     border: 1px solid black;
     border-radius: 10px;
 
-    padding: 14px
+    padding: 14px;
 }
 
 ::placeholder{
@@ -85,4 +86,11 @@
     font-style: normal;
     font-weight: 300;
     line-height: normal;
+}
+
+.calendar-container{
+    position: absolute;
+    z-index: 1;
+    top: 73px;
+    left: -182px;
 }

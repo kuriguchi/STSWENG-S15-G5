@@ -138,9 +138,24 @@
 .placeholder-text{
     text-align: center;
     color: rgba(187, 187, 187, 0.73);
+
     font-family: Pridi;
     font-size: 12px;
     font-style: normal;
-    font-weight: 500;
+    font-weight: 300;
     line-height: normal;
+}
+
+.billing-addr{
+    justify-content: center;
+}
+
+.city-select-size{
+    position: absolute;
+    right: 8px;
+}
+
+.state-select-size{
+    position: absolute;
+    right: 9px;
 }

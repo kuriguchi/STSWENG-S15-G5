@@ -1,6 +1,7 @@
 //import dependencies
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import $ from 'jquery';
 
 //import css
 import './OrderDetails.css';
@@ -12,9 +13,16 @@ import Button from '../../../../components/selectBtn/Button';
 import Select from '../../../../components/selectBtn/Select';
 import CircleButton from './CircleBtn';
 
-function OrderDetails(){
+function OrderDetails(props){
     const [isSizeSelectVisible, setSizeSelectVisible] = useState(false);
     const [qty, setQty] = useState(0);
+    const [currSize, setCurrSize] = useState('');
+
+    const sizes = {
+        slice: 'A Slice',
+        quarter: 'A Quarter',
+        whole: 'Whole'
+    }
 
     const toggleSizeSelectVisible = (event) => {
         setSizeSelectVisible(!isSizeSelectVisible);
@@ -25,9 +33,22 @@ function OrderDetails(){
         
         if(symbol === "incBtn"){
             setQty(qty + 1);
+            props.onSelectChange("qty", qty);
         } else {
             setQty(qty - 1);
+            props.onSelectChange("qty", qty);
         }
+    }
+
+    useEffect(() => {
+        props.onSelectChange("qty", qty);
+    }, [qty]);
+
+    const handleSizeChange = (item) => {
+        setCurrSize(item);
+        props.onSelectChange("size", item);
+
+        $("#orderSize").css("color", "black");
     }
 
     return(
@@ -68,7 +89,7 @@ function OrderDetails(){
                                 <div className="select-box pridi-medium-12" 
                                      style={{"width": "193px", "height": "39px", "position": "relative"}}
                                     >
-                                    <div className="placeholder-text" style={{"position": "absolute", "left": "16px"}}>Select Sizes...</div>
+                                    <div id="orderSize" className="placeholder-text" style={{"position": "absolute", "left": "16px"}}>{currSize || "Select Sizes..."}</div>
                                     <div className="spacer-25"></div>
                                     <div className="order-select-size dropdown-box">
                                         <Button onClick={toggleSizeSelectVisible} />
@@ -77,7 +98,7 @@ function OrderDetails(){
 
                                 <div className="br-10"></div>
 
-                                <Select {...{isVisible: isSizeSelectVisible, height: "60px", width: "193px"}} />
+                                <Select {...{isVisible: isSizeSelectVisible, height: "60px", width: "193px", list: sizes, handleChange: handleSizeChange}} />
                             </div>
 
                             <div className="spacer-20"></div>
