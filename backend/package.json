@@ -15,7 +15,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "jest --watchAll=false --color --verbose --coverage"
+    "test": "jest --watchAll=false --color --verbose --coverage",
+    "start": "node ./api/index.js"
   },
   "author": "",
   "license": "ISC",
