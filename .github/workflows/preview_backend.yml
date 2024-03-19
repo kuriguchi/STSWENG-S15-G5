@@ -1,0 +1,25 @@
+name: Vercel Preview Deployment
+env:
+  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID_BE }}
+  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID_BE }}
+on:
+  push:
+    branches-ignore:
+      - main
+jobs:
+  Deploy-Preview:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install Vercel CLI
+        working-directory: './backend'
+        run: npm install --global vercel@latest
+      - name: Pull Vercel Environment Information
+        working-directory: './backend'
+        run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN_BE }}
+      - name: Build Project Artifacts
+        working-directory: './backend'
+        run: vercel build --token=${{ secrets.VERCEL_TOKEN_BE }}
+      - name: Deploy Project Artifacts to Vercel
+        working-directory: './backend'
+        run: vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN_BE }}
