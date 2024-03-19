@@ -1,4 +1,5 @@
 import { useMemo } from 'react';
+import { Link } from 'react-router-dom';
 import { format, startOfMonth, endOfMonth, eachDayOfInterval, getDay, isToday } from 'date-fns';
 import PropTypes from 'prop-types';
 
@@ -21,12 +22,12 @@ const FullCalendar = ({ orders }) => {
     const endingDayIndex = getDay(lastDayOfMonth);
 
     const ordersByDate = useMemo(() => {
-        return orders.reduce((acc, event) => {
-            const dateKey = format(event.date, 'yyyy-MM-dd');
+        return orders.reduce((acc, order) => {
+            const dateKey = format(order.datePickup, 'yyyy-MM-dd');
             if (!acc[dateKey]) {
                 acc[dateKey] = [];
             }
-            acc[dateKey].push(event);
+            acc[dateKey].push(order);
             return acc;
         }, {});
     }, [orders]);
@@ -51,22 +52,39 @@ const FullCalendar = ({ orders }) => {
                 {daysInMonth.map((day) => {
                     const dateKey = format(day, 'yyyy-MM-dd');
                     const todaysOrders = ordersByDate[dateKey] || [];
+                    const orderLimit = 3;
                     return (
                         <div
                             key={day}
                             className={`${styles['day-cell']} ${isToday(day) ? `${styles['current-day']}` : ''}`}
                         >
-                            {todaysOrders.map((order, index) => {
-                                return (
-                                    <div
-                                        key={index} // replace with unique id
-                                        className={`${styles['order-item']} ${styles[`${order.status}`]}`}
-                                    >
-                                        {order.orderTitle.toUpperCase()}
+                            <Link
+                                to="day-orders"
+                                state={{ orders: todaysOrders }}
+                                key={day}
+                                className={styles['day-link']}
+                            >
+                                <h1>{todaysOrders.length}</h1>
+                                {/* {todaysOrders.slice(0, orderLimit).map((order) => {
+                                    return (
+                                        <div
+                                            key={order._id} // replace with unique id
+                                            className={`${styles['order-item']} ${
+                                                styles[`${order.status.toLowerCase()}`]
+                                            }`}
+                                        >
+                                            {order.orderedProduct.toUpperCase()}
+                                        </div>
+                                    );
+                                })}
+
+                                {todaysOrders.length > orderLimit && (
+                                    <div className={styles['day-extra']}>
+                                        {todaysOrders.length - orderLimit} more orders...
                                     </div>
-                                );
-                            })}
-                            <span className={styles.day}>{day.getDate()}</span>
+                                )} */}
+                                <span className={styles.day}>{day.getDate()}</span>
+                            </Link>
                         </div>
                     );
                 })}
@@ -82,9 +100,21 @@ const FullCalendar = ({ orders }) => {
 FullCalendar.propTypes = {
     orders: PropTypes.arrayOf(
         PropTypes.shape({
-            date: PropTypes.instanceOf(Date).isRequired,
-            orderTitle: PropTypes.string.isRequired,
-            status: PropTypes.oneOf(['pending', 'completed', 'cancelled']).isRequired,
+            _id: PropTypes.string.isRequired,
+            orderNum: PropTypes.string.isRequired,
+            orderedProduct: PropTypes.string.isRequired,
+            name: PropTypes.string.isRequired,
+            contactNo: PropTypes.string.isRequired,
+            email: PropTypes.string.isRequired,
+            fbLink: PropTypes.string.isRequired,
+            mode: PropTypes.string.isRequired,
+            dedication: PropTypes.string.isRequired,
+            orderDes: PropTypes.string.isRequired,
+            address: PropTypes.string.isRequired,
+            dateOrdered: PropTypes.instanceOf(Date).isRequired,
+            datePickup: PropTypes.instanceOf(Date).isRequired,
+            status: PropTypes.string.isRequired,
+            __v: PropTypes.number.isRequired,
         })
     ).isRequired,
 };

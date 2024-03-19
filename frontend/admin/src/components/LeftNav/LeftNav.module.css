@@ -2,6 +2,7 @@
   margin: 0;
   background-color: #ee1717;
   height: calc(100vh - 6.25rem);
+  min-height: 100%;
   display: flex;
   flex-direction: column;
 
@@ -41,6 +42,8 @@
   font-family: "Pridi", sans-serif;
   font-size: 1.25rem;
   color: black;
+
+  cursor: pointer;
 }
 
 .nav-list .active {

@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useLocation, Link } from 'react-router-dom';
 import { format } from 'date-fns';
 
 import styles from './LeftNav.module.css';
@@ -8,6 +9,12 @@ import editIcon from '../../assets/editicon.svg';
 import logoutIcon from '../../assets/logouticon.svg';
 
 const LeftNav = () => {
+    const location = useLocation();
+    let trimLoc = location.pathname;
+    if (trimLoc.endsWith('/')) {
+        trimLoc = trimLoc.slice(0, -1);
+    }
+
     const [time, setTime] = useState(new Date());
 
     useEffect(() => {
@@ -30,10 +37,12 @@ const LeftNav = () => {
             </h1>
 
             <ul className={styles['nav-list']}>
-                <li className={styles.active}>
-                    <img src={calendarIcon} alt="calendarIcon" />
-                    Order Calendar
-                </li>
+                <Link to="/dashboard" style={{ all: 'unset' }}>
+                    <li className={styles.active}>
+                        <img src={calendarIcon} alt="calendarIcon" />
+                        {trimLoc === '/dashboard' ? 'Order Calendar' : 'Back to Calendar'}
+                    </li>
+                </Link>
                 <li>
                     <img src={editIcon} alt="editIcon" />
                     Edit Contact

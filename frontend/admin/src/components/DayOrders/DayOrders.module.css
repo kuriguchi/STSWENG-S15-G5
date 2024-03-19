@@ -1,0 +1,116 @@
+.dayorders-container {
+  width: calc(100% - 2 * 3.125rem);
+  height: calc(100% - 2 * 2.5rem);
+
+  margin-block: 2.5rem;
+  margin-inline: 3.125rem;
+  padding-inline: 1.31rem;
+
+  border-radius: 1.25rem;
+  border: 1px solid #000;
+  background: #fff;
+  box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.4);
+}
+
+.header {
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.header h2 {
+  margin-inline: auto;
+
+  margin-block: 1.21rem 0;
+  padding: 0;
+  color: #fd5001;
+  font-family: Selfie;
+  font-size: 3rem;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 4.25rem;
+}
+
+.header h3 {
+  margin-inline: auto;
+  margin-block: 0.7rem 0;
+  color: #000;
+  font-family: Pridi;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 2.313rem;
+}
+
+.header span {
+  margin-left: 10.31rem;
+
+  color: #000;
+  font-family: Pridi;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 1.938rem;
+}
+
+.orders-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin: 3.15rem;
+  margin-inline: 2rem;
+}
+
+.orders-headers {
+  grid-column: span 4;
+  display: grid;
+  grid-template-columns: 17% 33% 25% 25%;
+  text-align: center;
+}
+
+.orders-headers h3 {
+  margin: 0;
+  color: #000;
+  text-align: center;
+  font-family: Pridi;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.938rem;
+}
+
+.order-row {
+  grid-column: span 4;
+  display: grid;
+  grid-template-columns: 17% 33% 25% 25%;
+  margin-inline: -8px;
+  margin-bottom: 0.5rem;
+  padding-block: 1.2rem;
+  box-sizing: border-box;
+  border-radius: 0.625rem;
+  border: 8px solid #14cf11;
+  background: #fff;
+
+  color: #000;
+  text-align: center;
+  font-family: Pridi;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 1.938rem;
+
+  text-decoration: none;
+}
+
+.completed {
+  border-color: #14cf11;
+}
+
+.pending {
+  border-color: #1b9fff;
+}
+
+.cancelled {
+  border-color: #ff1b1b;
+}

@@ -1,0 +1,109 @@
+.orderdetails-container {
+  width: calc(100% - 2 * 3.125rem);
+  height: calc(100% - 2 * 2.5rem);
+
+  margin-block: 2.5rem;
+  margin-inline: 3.125rem;
+  padding-inline: 1.31rem;
+
+  border-radius: 1.25rem;
+  border: 1px solid #000;
+  background: #fff;
+  box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.4);
+}
+
+.header {
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.header h2 {
+  margin-inline: auto;
+
+  margin-block: 1.21rem 0;
+  padding: 0;
+  color: #fd5001;
+  font-family: Selfie;
+  font-size: 3rem;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 4.25rem;
+}
+
+.header h3 {
+  margin-inline: auto;
+  margin-block: 0.7rem 0;
+  color: #000;
+  font-family: Pridi;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 2.313rem;
+}
+
+.order {
+  height: calc(80% - 0.5rem - 2.8rem);
+  margin-block: 0.5rem 2.8rem;
+  margin-inline: 10.84rem;
+
+  border-width: 8px;
+  border-style: solid;
+  border-color: #ff1b1b;
+  border-radius: 50px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  color: #000;
+  text-align: center;
+  font-family: Pridi;
+  font-size: 0.9375rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+
+.order b {
+  display: block;
+  margin: 0;
+  padding: 0;
+  color: #000;
+  text-align: center;
+  font-family: Pridi;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.938rem;
+}
+
+.id {
+  margin-top: 3.25rem;
+}
+
+.type {
+  margin-top: 5.875rem;
+}
+
+.status {
+  margin-top: 8.75rem;
+}
+
+.notes {
+  margin-top: 1.563rem;
+}
+
+.completed {
+  border-color: #14cf11;
+}
+
+.pending {
+  border-color: #1b9fff;
+}
+
+.cancelled {
+  border-color: #ff1b1b;
+}

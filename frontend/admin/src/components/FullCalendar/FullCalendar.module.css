@@ -5,6 +5,7 @@
   margin-block: 2.5rem;
   margin-inline: 3.125rem;
   padding-inline: 1.31rem;
+  padding-bottom: 1rem;
 
   border-radius: 1.25rem;
   border: 1px solid #000;
@@ -68,16 +69,32 @@
 }
 
 .day-cell {
-  padding-top: 0.6rem;
+  height: 8.25rem;
   border: 1px solid #000;
   background: #fff;
   display: flex;
   flex-direction: column;
 }
 
+.day-extra {
+  font-family: "Pridi", sans-serif;
+  font-size: 0.5rem;
+  text-align: center;
+}
+
+.day-link {
+  all: unset;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  padding-top: 0.2rem;
+  display: flex;
+  flex-direction: column;
+}
+
 .day {
   margin-top: auto;
-  margin-bottom: 0.1rem;
+  margin-bottom: 0;
   margin-left: auto;
   margin-right: 0.22rem;
   color: #fd5001;
