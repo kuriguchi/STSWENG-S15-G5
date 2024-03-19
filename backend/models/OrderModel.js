@@ -12,59 +12,87 @@ var OrderSchema = new mongoose.Schema({
         required: true
     },
 
-    name: {
+    fname: {
         type: String,
+        default: '',
+        required: true
+    },
+
+    lname: {
+        type: String,
+        default: '',
         required: true
     },
 
     contactNo: {
         type: String,
+        default: '',
         required: true
     },
 
     email: {
         type: String,
+        default: 'email',
         required: true
     },
 
-    fbLink: {
+    addr1: {
         type: String,
+        default: '',
         required: true
     },
+
+    addr2: {
+        type: String,
+        default: '',
+        required: true
+    },
+
+    city: {
+        type: String,
+        default: '',
+        required: true
+    },
+
+    province: {
+        type: String,
+        default: '',
+        required: true
+    },
+
+    size: {
+        type: String,
+        default: '',
+        required: true
+    },
+
+    qty: {
+        type: Number,
+        default: 1,
+        required: true
+    }, 
 
     mode: {
         type: String,
-        enum: ['Delivery by Grab/Lalamove', 'Pick-up', 'Delivery by Client'],
-        default: 'Pick-up',
+        enum: ['Store Pick-Up', 'Lalamove', 'Grab', 'Client'],
+        default: 'Store Pick-Up',
         required: true
     },
 
-    dedication: {
+    additional: {
         type: String,
         default: 'None'
     },
-
-    orderDes: {
-        type: String,
-        default: 'None'
-    }, 
-
-    address: {
-        type: String,
-        default: 'Pick-up'
-    }, 
 
     dateOrdered: {
         type: String,
-        required: true
+        default: (new Date()).toDateString()
     },
 
     datePickup: {
         type: String,
         required: true
     },
-
-    /** Image attribute here */
 
     status: {
         type: String,

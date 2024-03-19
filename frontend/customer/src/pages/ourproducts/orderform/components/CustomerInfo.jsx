@@ -229,7 +229,7 @@ function CustomerInfo(props) {
 
                             <div className="br-10"></div>
 
-                            <Select {...{isVisible: isSelectCityVisible, list: cities, width: "233px", handleChange: handleCityChange}}/>
+                            <Select {...{isVisible: isSelectCityVisible, list: cities, width: "233px", handleChange: handleCityChange, toggleVisibility: toggleSelectCityVisibility}}/>
                         </div>
 
                         <div className="spacer-30"></div>
@@ -251,7 +251,7 @@ function CustomerInfo(props) {
 
                             <div className="br-10"></div>
 
-                            <Select {...{isVisible: isSelectStateVisible, list: states, width: "240px", handleChange: handleStateChange}} />
+                            <Select {...{isVisible: isSelectStateVisible, list: states, width: "240px", handleChange: handleStateChange, toggleVisibility: toggleSelectStateVisibility}} />
                         </div>
                     </div>
 

@@ -102,7 +102,7 @@ function DeliveryDetails(props){
                         </div>
                         
                         <div className="br-10"></div>
-                        <Select {...{isVisible: isModeVisible, height: "60px", width: "167px", list: modes, handleChange: handleModeChange}} />
+                        <Select {...{isVisible: isModeVisible, height: "60px", width: "167px", list: modes, handleChange: handleModeChange, toggleVisibility: toggleMode}} />
                     </div>
 
                     <div className="spacer-15"></div>

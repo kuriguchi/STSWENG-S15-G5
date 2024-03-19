@@ -98,7 +98,7 @@ function OrderDetails(props){
 
                                 <div className="br-10"></div>
 
-                                <Select {...{isVisible: isSizeSelectVisible, height: "60px", width: "193px", list: sizes, handleChange: handleSizeChange}} />
+                                <Select {...{isVisible: isSizeSelectVisible, height: "60px", width: "193px", list: sizes, handleChange: handleSizeChange, toggleVisibility: toggleSizeSelectVisible}} />
                             </div>
 
                             <div className="spacer-20"></div>
