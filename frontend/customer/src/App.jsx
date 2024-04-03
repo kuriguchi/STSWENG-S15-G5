@@ -29,7 +29,8 @@ function App() {
                         <Route exact path="/ourstory" element={<OurStory />} />
                         <Route exact path="/ourproducts" element={<OurProducts />} />
                         <Route exact path="/contactus" element={<ContactUs />} />
-                        <Route exact path="/orderform" element={<OrderForm />} />
+                        <Route exact path="/ourproducts/:id" element={<ProductDetails />} />
+                        <Route exact path="/order/:id" element={<OrderForm />} />
                         
                         {/* For testing components only */}
                         <Route exact path="/customerinfo" element={<CustomerInfo />} />

@@ -103,6 +103,10 @@ function OrderForm(){
             });
     }
 
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     return(
         <>
             <div className="product-order-form">
