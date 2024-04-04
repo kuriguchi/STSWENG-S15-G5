@@ -1,4 +1,5 @@
-import { useLocation, Link } from 'react-router-dom';
+import { useLocation, Link, useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 
 import './ProductDetails.css';
 
@@ -13,6 +14,8 @@ import elipses from '../../assets/productdetails-imgs/elipses.svg';
 
 const ProductDetails = () => {
     const location = useLocation();
+    const navigate = useNavigate();
+
     const productID = location.pathname
         .split('/')
         .filter((x) => x)
@@ -20,6 +23,15 @@ const ProductDetails = () => {
 
     const to = `/ourproducts/${productID}`;
 
+    const handleOrder = () => {
+        navigate(`/order/${productID}`);
+    };
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
+    console.log(productID);
     return (
         <main>
             <div className="breadcrumbs-container">
@@ -108,7 +120,7 @@ const ProductDetails = () => {
                         <button type="button" className="orange-button">
                             Add to Cart
                         </button>
-                        <button type="button" className="orange-button">
+                        <button type="button" className="orange-button" onClick={handleOrder} >
                             Order now
                         </button>
                     </div>
