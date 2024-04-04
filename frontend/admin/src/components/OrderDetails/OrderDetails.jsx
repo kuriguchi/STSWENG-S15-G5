@@ -37,22 +37,65 @@ const OrderDetails = () => {
                 <h3>{format(date, 'MM / dd / yyyy')}</h3>
             </div>
             <div className={`${styles.order} ${styles[selectedStatus.replace(/\s+/g, '-').toLowerCase()]}`}>
-                <div className={styles.id}>
+                {/* row 1 */}
+                <div className={styles.num}>
                     <b>Order Number:</b>
-                    {order._id}
+                    {order.orderNum}
                 </div>
+                <div className={styles.recipient}>
+                    <b>Recipient:</b>
+                    {order.fname} {order.lname}
+                </div>
+                <div>
+                    <b>Address 1:</b>
+                    {order.addr1}
+                </div>
+
+                {/* row 2 */}
                 <div className={styles.type}>
                     <b>Order Type:</b>
                     {order.orderedProduct}
                 </div>
-                <div className={styles.recipient}>
-                    <b>Recipient:</b>
-                    {order.name}
+                <div className={styles.contact}>
+                    <b>Contact Number:</b>
+                    {order.contactNo}
                 </div>
-                <div className={styles.address}>
-                    <b>Address:</b>
-                    {order.address}
+                <div>
+                    <b>Address 2:</b>
+                    {order.addr2}
                 </div>
+
+                {/* row 3 */}
+                <div>
+                    <b>Size:</b>
+                    {order.size}
+                </div>
+                <div>
+                    <b>Email:</b>
+                    {order.email}
+                </div>
+                <div>
+                    <b>Mode:</b>
+                    {order.mode}
+                </div>
+
+                {/* row 4 */}
+                <div>
+                    <b>Quantity:</b>
+                    {order.qty}
+                </div>
+                <div>
+                    <b>Date Ordered:</b>
+                    {format(order.dateOrdered, 'MM / dd / yyyy')}
+                </div>
+                <div>
+                    <b>Date Pickup:</b>
+                    {order.datePickup && !isNaN(new Date(order.datePickup))
+                        ? format(order.datePickup, 'MM / dd / yyyy')
+                        : ''}
+                </div>
+
+                {/*  */}
                 <div className={styles.status}>
                     <b>Status:</b>
                     <select value={selectedStatus} onChange={handleStatusChange}>

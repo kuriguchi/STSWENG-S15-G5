@@ -75,9 +75,9 @@
   border-color: #ff1b1b;
   border-radius: 50px;
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 2.5rem;
   gap: 1.625rem;
 
   color: #000;
@@ -116,6 +116,10 @@ select {
   font-weight: 300;
 }
 
+.notes {
+  grid-column: span 2;
+}
+
 .completed {
   border-color: #14cf11;
 }
@@ -135,11 +139,14 @@ select {
 .confirm-button {
   width: auto;
   height: auto;
+  margin: auto;
+  padding-block: 0.5rem;
   padding-inline: 1rem;
 
   background-color: #fd5001;
   border: none;
   border-radius: 1.25rem;
+  grid-column: span 3;
 
   color: white;
   font-family: Pridi;

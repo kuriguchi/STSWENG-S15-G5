@@ -86,7 +86,7 @@ const DayOrders = () => {
                         className={`${styles['order-row']} ${styles[order.status.replace(/\s+/g, '-').toLowerCase()]}`}
                         key={index}
                     >
-                        <div className={styles['order-id']}>{order._id}</div>
+                        <div className={styles['order-num']}>{order.orderNum}</div>
                         <div>{order.orderedProduct}</div>
                         <div>{order.status}</div>
                         <div className={styles['order-price']}>{order.price}</div>

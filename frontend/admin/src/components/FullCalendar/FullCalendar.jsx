@@ -31,7 +31,7 @@ const FullCalendar = ({ orders }) => {
 
     const ordersByDate = useMemo(() => {
         return orders.reduce((acc, order) => {
-            const dateKey = format(order.datePickup, 'yyyy-MM-dd');
+            const dateKey = format(order.dateOrdered, 'yyyy-MM-dd');
             if (!acc[dateKey]) {
                 acc[dateKey] = [];
             }
