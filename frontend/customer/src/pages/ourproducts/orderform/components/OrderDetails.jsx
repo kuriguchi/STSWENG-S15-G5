@@ -13,10 +13,15 @@ import Button from '../../../../components/selectBtn/Button';
 import Select from '../../../../components/selectBtn/Select';
 import CircleButton from './CircleBtn';
 
+import img from '../../../../assets/ourproducts-imgs/sample_product1.png';
+
 function OrderDetails(props){
     const [isSizeSelectVisible, setSizeSelectVisible] = useState(false);
     const [qty, setQty] = useState(0);
     const [currSize, setCurrSize] = useState('');
+
+    const imgPath = '../../' + props.product.img;
+    const [image, setImage] = useState('');
 
     const sizes = {
         slice: 'A Slice',
@@ -51,6 +56,22 @@ function OrderDetails(props){
         $("#orderSize").css("color", "black");
     }
 
+    // useEffect(() => {
+    //     setImgPath(props.product.img);
+    // }, []);
+
+    console.log('IMAGE:' + props.product.img);
+
+    useEffect(() => {
+        import(/* @vite-ignore */imgPath)
+            .then(imageModule => {
+                setImage(imageModule.default);
+            })
+            .catch(error => {
+                console.error('Error loading image: ', error);
+            });
+    }, [imgPath]);
+
     return(
         <>
             <div className="order-details-layout">
@@ -61,20 +82,17 @@ function OrderDetails(props){
 
                 <div className="order-details-content">
                     <div className="order-details-imgbox">
-                        <img src={carrot_cake} alt="carrot_cake" />
+                        <img src={image} alt="carrot_cake" />
                     </div>
 
                     <div className="spacer-25"></div>
 
                     <form className="order-details-form">
-                        <div className="cake-order-title pridi-medium-20">Carrot Cake</div>
+                        <div className="cake-order-title pridi-medium-20">{props.product.name}</div>
 
                         <div className="br-5"></div>
 
-                        <div className="cake-order-detail pridi-medium-12">Lorem ipsum dolor sit amet, 
-                            consectetur adipiscing elit. Sed eu lorem quis velit accumsan venenatis vel eu nisl. 
-                            Nunc fermentum sodales quam.
-                        </div>
+                        <div className="cake-order-detail pridi-medium-12">{props.product.description}</div>
 
                         <div className="br-35"></div>
 

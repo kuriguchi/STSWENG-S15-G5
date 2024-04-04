@@ -1,5 +1,5 @@
 import { useLocation, Link, useNavigate } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 import './ProductDetails.css';
 
@@ -16,6 +16,11 @@ const ProductDetails = () => {
     const location = useLocation();
     const navigate = useNavigate();
 
+    const [product, setProduct] = useState('');
+
+    const [imgPath, setImgPath] = useState('');
+    const [image, setImage] = useState('');
+
     const productID = location.pathname
         .split('/')
         .filter((x) => x)
@@ -31,7 +36,37 @@ const ProductDetails = () => {
         window.scrollTo(0, 0);
     }, []);
 
-    console.log(productID);
+    useEffect(() => {
+        fetch(`http://localhost:4000/getProduct/${productID}`)
+            .then(res => {
+                if(!res.ok){
+                    throw new Error('Error Getting Product.');
+                }
+
+                return res.json();
+            })
+
+            .then(data => {
+                setProduct(data);
+                setImgPath(data.img);
+                console.log('Successfully retrieved product.');
+            })
+
+            .catch(error => {
+                console.error('Error: ', error);
+            });
+    }, []);
+
+    useEffect(() => {
+        import(/* @vite-ignore */imgPath)
+            .then(imageModule => {
+                setImage(imageModule.default);
+            })
+            .catch(error => {
+                console.error('Error loading image: ', error);
+            });
+    }, [imgPath]);
+
     return (
         <main>
             <div className="breadcrumbs-container">
@@ -41,7 +76,7 @@ const ProductDetails = () => {
                     </span>
                 </div>
             </div>
-            <div className="product-details-name">CARROT CAKE</div>
+            <div className="product-details-name">{product.name}</div>
 
             <div className="product-details-section">
                 <div className="product-details-left-panel">
@@ -64,9 +99,8 @@ const ProductDetails = () => {
                             </div>
                         </div>
                         <div className="main-product-image-container">
-                            {/* image carousel to fix */}
                             <div className="main-product-image-wrapper">
-                                <img src={img6} alt="main product" className="main-product-image" />
+                                <img src={image} alt="main product" className="main-product-image" />
                             </div>
                             <img src={elipses} alt="elipses" className="elipses" />
                         </div>
@@ -78,12 +112,7 @@ const ProductDetails = () => {
                     <div className="product-details detail-container">
                         <h3>Pastry Description</h3>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu lorem quis velit accumsan
-                            venenatis vel eu nisl. Nunc fermentum sodales quam, in sodales dolor pulvinar eu. Mauris
-                            efficitur, metus vel imperdiet gravida, justo nisi interdum metus, vitae varius risus tellus
-                            id justo. Donec in ex semper, vulputate erat non, cursus nisl. Fusce sodales vulputate
-                            egestas. Nam iaculis leo nisl, eget mollis mauris malesuada at. Duis lorem neque, maximus
-                            eget tempor finibus, ultrices non eros.
+                            {product.description}
                         </p>
                     </div>
                     <div className="product-details detail-container">
@@ -100,19 +129,19 @@ const ProductDetails = () => {
                                 <span>
                                     <b className="price-slice-size">A Slice</b> (4 inches)
                                 </span>
-                                <b>750.00 Php</b>
+                                <b>{Math.floor(product.price / 3)}.00 Php</b>
                             </span>
                             <span className="price-size">
                                 <span>
                                     <b>Whole Cake</b> (12 inches)
                                 </span>
-                                <b>3000.00 Php</b>
+                                <b>{product.price}.00 Php</b>
                             </span>
                             <span className="price-size">
                                 <span>
                                     <b>Custom Size</b> (per inch)
                                 </span>
-                                <b>200.00 Php</b>
+                                <b>{Math.floor(product.price / 12)}.00 Php</b>
                             </span>
                         </p>
                     </div>

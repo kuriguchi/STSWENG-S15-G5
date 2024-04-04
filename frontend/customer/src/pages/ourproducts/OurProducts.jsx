@@ -55,27 +55,6 @@ const OurProducts = () => {
                         ))}
                     </ul>
             </div>
-
-
-            <div className="baked-products-section">
-                <img src={bakedPartitionHeader} alt="Baked Partition Header" className="partition-header" />
-
-                <div className="product-snippets-container">
-                    <div className="product-snippet">
-                        <div className="product-snippet-image-container cake">
-                            <div className="product-image-inner-line"></div>
-                            <img src={sampleProductImg2} alt="Sourdough Bread" className="product-snippet-image" />
-                        </div>
-                        <div className="product-snippet-details">
-                            <h3 className="product-snippet-title">SOURDOUGH BREAD</h3>
-                            <p className="product-snippet-price">starts at Php 2000</p>
-                        </div>
-                        <Link className="order-product-button">order now</Link>
-                    </div>
-
-                </div>
-            </div>
-            
         </main>
     );
 };

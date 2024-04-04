@@ -1,6 +1,7 @@
 //import dependencies
 import React from 'react';
 import { useState, useEffect } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import $ from 'jquery';
 
 //import css
@@ -12,7 +13,17 @@ import OrderDetails from '../orderform/components/OrderDetails';
 import DeliveryDetails from '../orderform/components/DeliveryDetails';
 
 function OrderForm(){
+    const [product, setProduct] = useState('');
+
+    const location = useLocation();
+    const navigate = useNavigate();
+
     const productName = "Carrot Cake";
+
+    const productID = location.pathname
+        .split('/')
+        .filter((x) => x)
+        .pop();
 
     const [inputs, setInputs] = useState({
         pname: productName,
@@ -101,11 +112,35 @@ function OrderForm(){
             .catch((err) => {
                 console.error('Error: ', error);
             });
+
+        navigate('/');
     }
 
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
+
+    useEffect(() => {
+        fetch(`http://localhost:4000/getProduct/${productID}`)
+            .then(res => {
+                if(!res.ok){
+                    throw new Error('Error Getting Product.');
+                }
+
+                return res.json();
+            })
+
+            .then(data => {
+                setProduct(data);
+                setImgPath(data.img);
+                console.log('Successfully retrieved product.');
+            })
+
+            .catch(error => {
+                console.error('Error: ', error);
+            });
+    }, []);
+
 
     return(
         <>
@@ -118,7 +153,7 @@ function OrderForm(){
                         <div className="spacer-40"></div>
 
                         <div className="order-delivery-box">
-                            <OrderDetails {...{onChange: handleChange, form: inputs, onSelectChange: handleSelectChange}} />
+                            <OrderDetails {...{onChange: handleChange, form: inputs, onSelectChange: handleSelectChange, product: product}} />
                             <div style={{height: "42px"}}></div>
                             <DeliveryDetails {...{onChange: handleChange, form: inputs, onSelectChange: handleSelectChange}} />
                         </div>

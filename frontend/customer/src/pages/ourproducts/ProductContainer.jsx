@@ -13,7 +13,7 @@ function Product (props){
     const imgPath = props.productImg;
 
     useEffect(() => {
-        import(imgPath)
+        import(/* @vite-ignore */ imgPath)
             .then(imageModule => {
                 setImage(imageModule.default);
             })
