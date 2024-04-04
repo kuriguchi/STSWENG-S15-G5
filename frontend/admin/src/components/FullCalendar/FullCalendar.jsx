@@ -41,8 +41,6 @@ const FullCalendar = ({ orders }) => {
         }, {});
     }, [orders]);
 
-    console.log(orders);
-
     return (
         <div className={styles.calendar}>
             <div className={styles['calendar-header']}>

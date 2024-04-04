@@ -151,8 +151,6 @@ const Dashboard = () => {
 
         fetchOrders();
     }, []);
-
-    console.log(orders);
     return (
         <>
             <Header />

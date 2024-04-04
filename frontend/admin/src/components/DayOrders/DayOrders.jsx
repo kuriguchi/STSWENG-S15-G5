@@ -12,7 +12,6 @@ const DayOrders = () => {
 
     const orders = location.state.orders;
     const date = location.state.date;
-    console.log(orders);
 
     const [selectedStatus, setSelectedStatus] = useState('');
     const [filteredOrders, setFilteredOrders] = useState(orders);
