@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { format, startOfMonth, endOfMonth, eachDayOfInterval, getDay, isToday } from 'date-fns';
 import styles from './FullCalendar.module.css';
 
@@ -16,7 +16,8 @@ function capitalizeWords(str) {
 }
 
 const FullCalendar = ({ orders }) => {
-    const [date, setDate] = useState(new Date());
+    const location = useLocation();
+    const [date, setDate] = useState(location.state?.date || new Date());
 
     const firstDayOfMonth = startOfMonth(date);
     const lastDayOfMonth = endOfMonth(date);

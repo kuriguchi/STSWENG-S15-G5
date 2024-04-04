@@ -55,7 +55,7 @@ const DayOrders = () => {
         <div className={styles['dayorders-container']}>
             <div className={styles.header}>
                 <div>
-                    <button className={styles.back} onClick={() => navigate('/dashboard')}>
+                    <button className={styles.back} onClick={() => navigate('/dashboard', { state: { date } })}>
                         <img src={leftArrow} alt="back" />
                     </button>
                     <h2>{format(date, 'MMMM')}</h2>
