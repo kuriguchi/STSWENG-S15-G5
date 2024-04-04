@@ -50,6 +50,13 @@
   line-height: normal;
 }
 
+.arrow {
+  all: unset;
+  margin-inline: 1.125rem;
+
+  cursor: pointer;
+}
+
 .calendar-body {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
@@ -66,6 +73,8 @@
   font-style: normal;
   font-weight: 700;
   line-height: 1.5rem;
+
+  overflow: hidden;
 }
 
 .day-cell {
@@ -112,16 +121,18 @@
 
 .order-item {
   border-radius: 100vw;
-  text-align: center;
+  text-align: left;
   margin-inline: 0.5rem;
   margin-block: 0.25rem;
   padding-block: 0.35rem;
+  padding-inline: 1rem;
+  box-sizing: border-box;
 
   color: #000;
   font-family: Pridi;
   font-size: 0.75rem;
   font-style: normal;
-  font-weight: 300;
+  font-weight: 400;
   line-height: normal;
 
   overflow: hidden;
@@ -133,6 +144,10 @@
 }
 
 .pending {
+  background: #1b9fff;
+}
+
+.out-for-delivery {
   background: #ff991b;
 }
 

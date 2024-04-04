@@ -1,4 +1,5 @@
 .dayorders-container {
+  position: relative;
   width: calc(100% - 2 * 3.125rem);
   height: calc(100% - 2 * 2.5rem);
 
@@ -20,11 +21,30 @@
   flex-direction: column;
 }
 
+.header div {
+  margin-block: 1.21rem 0;
+
+  display: flex;
+  flex-direction: row;
+}
+
+.back {
+  all: unset;
+  position: absolute;
+  margin-left: 2rem;
+  cursor: pointer;
+}
+
+.back img {
+  width: 4.25rem;
+  height: 4.25rem;
+}
+
 .header h2 {
   margin-inline: auto;
-
-  margin-block: 1.21rem 0;
+  margin-block: 0;
   padding: 0;
+
   color: #fd5001;
   font-family: Selfie;
   font-size: 3rem;
@@ -45,7 +65,8 @@
 }
 
 .header span {
-  margin-left: 10.31rem;
+  margin-top: 0.5rem;
+  margin-left: 7.813rem;
 
   color: #000;
   font-family: Pridi;
@@ -55,10 +76,24 @@
   line-height: 1.938rem;
 }
 
+.header span select {
+  margin-left: 0.5rem;
+
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+
+  color: black;
+  font-family: Pridi;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 500;
+}
+
 .orders-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  margin: 3.15rem;
+  margin-block: 1.4rem 3.3rem;
   margin-inline: 2rem;
 }
 
@@ -111,6 +146,29 @@
   border-color: #1b9fff;
 }
 
+.out-for-delivery {
+  border-color: #ff9f1b;
+}
+
 .cancelled {
   border-color: #ff1b1b;
+}
+
+.export-container {
+  position: absolute;
+  width: auto;
+  right: 3.31rem;
+  bottom: 1rem;
+
+  display: inline;
+
+  color: #000;
+  text-align: center;
+  font-family: Pridi;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+
+  cursor: pointer;
 }

@@ -1,14 +1,22 @@
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { format, startOfMonth, endOfMonth, eachDayOfInterval, getDay, isToday } from 'date-fns';
-import PropTypes from 'prop-types';
-
 import styles from './FullCalendar.module.css';
+
+import leftArrow from '../../assets/leftarrow.svg';
+import rightArrow from '../../assets/rightarrow.svg';
 
 const WEEKDAYS = ['SUNDAY', 'MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY'];
 
+function capitalizeWords(str) {
+    return str
+        .split(' ')
+        .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(' ');
+}
+
 const FullCalendar = ({ orders }) => {
-    const date = new Date();
+    const [date, setDate] = useState(new Date());
 
     const firstDayOfMonth = startOfMonth(date);
     const lastDayOfMonth = endOfMonth(date);
@@ -32,11 +40,19 @@ const FullCalendar = ({ orders }) => {
         }, {});
     }, [orders]);
 
+    console.log(orders);
+
     return (
         <div className={styles.calendar}>
             <div className={styles['calendar-header']}>
+                <button className={styles.arrow} onClick={() => setDate(new Date(date.setMonth(date.getMonth() - 1)))}>
+                    <img src={leftArrow} alt="left arrow" />
+                </button>
                 <h2>{date.toLocaleString('default', { month: 'long' })}</h2>
                 <h3>{date.getFullYear()}</h3>
+                <button className={styles.arrow} onClick={() => setDate(new Date(date.setMonth(date.getMonth() + 1)))}>
+                    <img src={rightArrow} alt="right arrow" />
+                </button>
             </div>
             <div className={styles['calendar-body']}>
                 {WEEKDAYS.map((day) => (
@@ -52,7 +68,15 @@ const FullCalendar = ({ orders }) => {
                 {daysInMonth.map((day) => {
                     const dateKey = format(day, 'yyyy-MM-dd');
                     const todaysOrders = ordersByDate[dateKey] || [];
-                    const orderLimit = 3;
+
+                    const statusCounts = todaysOrders.reduce((counts, order) => {
+                        const status = order.status.toLowerCase().replace(/\s+/g, '-');
+                        counts[status] = (counts[status] || 0) + 1;
+                        return counts;
+                    }, {});
+
+                    const statusOrder = ['pending', 'out-for-delivery', 'completed'];
+
                     return (
                         <div
                             key={day}
@@ -60,29 +84,22 @@ const FullCalendar = ({ orders }) => {
                         >
                             <Link
                                 to="day-orders"
-                                state={{ orders: todaysOrders }}
+                                state={{ orders: todaysOrders, date: day }}
                                 key={day}
                                 className={styles['day-link']}
                             >
-                                <h1>{todaysOrders.length}</h1>
-                                {/* {todaysOrders.slice(0, orderLimit).map((order) => {
-                                    return (
-                                        <div
-                                            key={order._id} // replace with unique id
-                                            className={`${styles['order-item']} ${
-                                                styles[`${order.status.toLowerCase()}`]
-                                            }`}
-                                        >
-                                            {order.orderedProduct.toUpperCase()}
-                                        </div>
-                                    );
+                                {statusOrder.map((status) => {
+                                    const count = statusCounts[status];
+                                    if (count) {
+                                        return (
+                                            <div key={status} className={`${styles['order-item']} ${styles[status]}`}>
+                                                {count} {capitalizeWords(status.replace(/-/g, ' '))}
+                                            </div>
+                                        );
+                                    }
+                                    return null;
                                 })}
 
-                                {todaysOrders.length > orderLimit && (
-                                    <div className={styles['day-extra']}>
-                                        {todaysOrders.length - orderLimit} more orders...
-                                    </div>
-                                )} */}
                                 <span className={styles.day}>{day.getDate()}</span>
                             </Link>
                         </div>
@@ -95,28 +112,6 @@ const FullCalendar = ({ orders }) => {
             </div>
         </div>
     );
-};
-
-FullCalendar.propTypes = {
-    orders: PropTypes.arrayOf(
-        PropTypes.shape({
-            _id: PropTypes.string.isRequired,
-            orderNum: PropTypes.string.isRequired,
-            orderedProduct: PropTypes.string.isRequired,
-            name: PropTypes.string.isRequired,
-            contactNo: PropTypes.string.isRequired,
-            email: PropTypes.string.isRequired,
-            fbLink: PropTypes.string.isRequired,
-            mode: PropTypes.string.isRequired,
-            dedication: PropTypes.string.isRequired,
-            orderDes: PropTypes.string.isRequired,
-            address: PropTypes.string.isRequired,
-            dateOrdered: PropTypes.instanceOf(Date).isRequired,
-            datePickup: PropTypes.instanceOf(Date).isRequired,
-            status: PropTypes.string.isRequired,
-            __v: PropTypes.number.isRequired,
-        })
-    ).isRequired,
 };
 
 export default FullCalendar;
