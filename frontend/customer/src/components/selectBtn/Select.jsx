@@ -11,7 +11,7 @@ function Dropdown(props){
     });
 
     return(
-        <div onClick={props.toggleVisibility} >
+        <div onClick={props.toggleVisibility} data-testid="dropdown-container">
             {props.isVisible ? (
                 <ul className="select-item-container pridi-medium-15" 
                     style={{"height": props.height, "width": props.width}}>

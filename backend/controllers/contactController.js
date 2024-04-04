@@ -19,10 +19,10 @@ const contactController = {
     },
 
     updateContact: async function(req, res){
-        const query = new mongoose.Types.ObjectId(req.query);
+        const query = req.query;
         const contact = req.body;
 
-        Contact.updateOne({_id: query}, contact)
+        await Contact.updateOne({_id: query}, contact)
             .then((updatedContact) => {
                 if(updatedContact.matchedCount !== 0){
                     res.status(201).json({status: 201, message: 'Update Contact Success!'});
@@ -36,9 +36,9 @@ const contactController = {
     },
 
     deleteContact: async function(req, res){
-        const query = new mongoose.Types.ObjectId(req.query);
+        const query = req.query;
 
-        Contact.deleteOne({_id: query})
+        await Contact.deleteOne({_id: query})
             .then((response) => {
                 if(response.deletedCount !== 0){
                     res.status(201).json({status: 201, message: 'Delete Contact Successful!'});
@@ -52,9 +52,9 @@ const contactController = {
     }, 
 
     getContact: async function(req, res){
-        const query = new mongoose.Types.ObjectId(req.query);
+        const query = req.query;
 
-        Contact.findById(query)
+        await Contact.findById(query)
             .then((response) => {
                 if(response){
                     res.status(201).json(response);
