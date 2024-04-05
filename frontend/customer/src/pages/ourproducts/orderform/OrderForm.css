@@ -1,0 +1,23 @@
+.product-order-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 115px;
+}
+
+.order-delivery-box{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    top: 20px;
+}
+
+.order-form-title{
+    color: #ED4B01;
+    font-family: Pridi;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+}

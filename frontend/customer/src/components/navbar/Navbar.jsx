@@ -13,7 +13,7 @@ const Navbar = () => {
                 <ul>
                     <CustomLink to="/">home</CustomLink>
                     <CustomLink to="/ourstory">our story</CustomLink>
-                    <CustomLink to="/ourproducts">our products</CustomLink>
+                    <CustomLink id="ourProducts" to="/ourproducts">our products</CustomLink>
                     <CustomLink to="/contactus">contact us</CustomLink>
                 </ul>
             </nav>
