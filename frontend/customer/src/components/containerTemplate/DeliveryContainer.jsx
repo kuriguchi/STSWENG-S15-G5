@@ -1,6 +1,4 @@
 //import dependencies
-import React from 'react';
-
 function DeliveryContainer() {
     return (
         <>
