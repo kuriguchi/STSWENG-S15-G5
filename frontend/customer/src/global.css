@@ -1,12 +1,27 @@
 @import url("https://fonts.googleapis.com/css2?family=Pridi:wght@200;300;400;500;600;700&family=Roboto:wght@100&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap");
-@import url('https://fonts.cdnfonts.com/css/kestoy-selfie');
+@font-face {
+  font-family: "Selfie";
+  src: url("./assets/fonts/Selfie/Selfie_Regular.otf") format("opentype");
+  font-weight: 400;
+}
 
+@font-face {
+  font-family: "Selfie";
+  src: url("./assets/fonts/Selfie/Selfie_Light.otf") format("opentype");
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "Selfie";
+  src: url("./assets/fonts/Selfie/Selfie_Black.otf") format("opentype");
+  font-weight: 900;
+}
 /* :root {
   font-size: 16px; 
 }  */
 
-.App{
+.App {
   display: flex;
   flex-direction: column;
 }
@@ -20,23 +35,23 @@ body {
   margin: 0;
 }
 
-.pages{
+.pages {
   display: flex;
   flex-direction: column;
   height: auto;
 }
 
-.flex-row{
+.flex-row {
   display: flex;
 }
 
-.flex-col{
+.flex-col {
   display: flex;
   flex-direction: column;
   align-self: center;
 }
 
-.align-center{
+.align-center {
   align-items: center;
 }
 
@@ -48,7 +63,7 @@ body {
   line-height: normal;
 }
 
-.pridi-medium-15{
+.pridi-medium-15 {
   font-family: "Pridi", "Roboto", sans-serif;
   color: black;
   font-size: 15px;
@@ -57,52 +72,52 @@ body {
   line-height: normal;
 }
 
-.pridi-medium-12{
+.pridi-medium-12 {
   font-family: "Pridi", "Roboto", sans-serif;
   color: black;
   font-size: 12px;
   font-style: normal;
   font-weight: 500;
-  line-height: normal; 
+  line-height: normal;
 }
 
-.pridi-medium-20{
+.pridi-medium-20 {
   font-family: "Pridi", "Roboto", sans-serif;
   color: black;
   font-size: 20px;
   font-style: normal;
   font-weight: 500;
-  line-height: normal; 
+  line-height: normal;
 }
 
-.input-box{
+.input-box {
   display: flex;
   position: relative;
   width: 248.6px;
   flex-direction: column;
 }
 
-.input-box label{
+.input-box label {
   width: max-content;
   height: max-content;
 }
 
-::placeholder{
+::placeholder {
   color: rgba(187, 187, 187, 0.73);
 }
 
-.input-padding-15{
+.input-padding-15 {
   padding-left: 15px;
   padding-top: 15px;
   padding-bottom: 15px;
 }
 
-.input-padding-10{
+.input-padding-10 {
   padding-top: 10px;
   padding-bottom: 10px;
 }
 
-.input-box input{
+.input-box input {
   width: auto;
   flex-shrink: 0;
 
@@ -112,7 +127,7 @@ body {
 }
 
 .orange-text {
-  color: #ED4B01;
+  color: #ed4b01;
 }
 
 .spacer-30 {
@@ -123,63 +138,63 @@ body {
   width: 5px;
 }
 
-.spacer-10{
+.spacer-10 {
   width: 10px;
 }
 
-.spacer-20{
+.spacer-20 {
   width: 20px;
 }
 
-.spacer-25{
+.spacer-25 {
   width: 25px;
 }
 
-.spacer-40{
+.spacer-40 {
   width: 40px;
 }
 
-.spacer-15{
+.spacer-15 {
   width: 15px;
 }
 
-.br-2{
+.br-2 {
   height: 2px;
 }
 
-.br-5{
+.br-5 {
   height: 5px;
 }
 
-.br-10{
+.br-10 {
   height: 10px;
 }
 
-.br-15{
+.br-15 {
   height: 15px;
 }
 
-.br-25{
+.br-25 {
   height: 25px;
 }
 
-.br-50{
+.br-50 {
   height: 50px;
 }
 
-.br-75{
+.br-75 {
   height: 75px;
 }
 
-.br-30{
+.br-30 {
   height: 30px;
 }
 
-.br-35{
+.br-35 {
   height: 35px;
 }
 
-.divider-100{
+.divider-100 {
   width: 114px;
   height: 1px;
   flex-shrink: 0;
@@ -187,19 +202,19 @@ body {
   background: #000;
 }
 
-.align-self-center{
+.align-self-center {
   align-self: center;
 }
 
-.margin-center{
+.margin-center {
   margin-top: auto;
   margin-bottom: auto;
 }
 
-.font-white{
+.font-white {
   color: white;
 }
 
-.text-center{
+.text-center {
   text-align: center;
 }
