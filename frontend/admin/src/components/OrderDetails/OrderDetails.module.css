@@ -67,7 +67,7 @@
   height: calc(80% - 0.5rem - 2.8rem);
   margin-block: 0.5rem 2.8rem;
   margin-inline: 10.84rem;
-  padding-block: 3.25rem;
+  padding-block: 3.25rem 2rem;
   box-sizing: border-box;
 
   border-width: 8px;

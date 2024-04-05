@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useMemo, useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { format, startOfMonth, endOfMonth, eachDayOfInterval, getDay, isToday } from 'date-fns';
 import styles from './FullCalendar.module.css';
@@ -15,7 +15,22 @@ function capitalizeWords(str) {
         .join(' ');
 }
 
-const FullCalendar = ({ orders }) => {
+const FullCalendar = () => {
+    const [orders, setOrders] = useState([]);
+
+    useEffect(() => {
+        const fetchOrders = async () => {
+            const response = await fetch('http://localhost:4000/getAllOrders');
+            const data = await response.json();
+
+            if (response.ok) {
+                setOrders(data);
+            }
+        };
+
+        fetchOrders();
+    }, []);
+
     const location = useLocation();
     const [date, setDate] = useState(location.state?.date || new Date());
 

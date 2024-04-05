@@ -5,7 +5,7 @@ import { format } from 'date-fns';
 import styles from './LeftNav.module.css';
 
 import calendarIcon from '../../assets/calendaricon.svg';
-import editIcon from '../../assets/editicon.svg';
+// import editIcon from '../../assets/editicon.svg';
 import logoutIcon from '../../assets/logouticon.svg';
 
 const LeftNav = () => {
@@ -43,10 +43,10 @@ const LeftNav = () => {
                         {trimLoc === '/dashboard' ? 'Order Calendar' : 'Back to Calendar'}
                     </li>
                 </Link>
-                <li>
+                {/* <li>
                     <img src={editIcon} alt="editIcon" />
                     Edit Contact
-                </li>
+                </li> */}
                 <li>
                     <img src={logoutIcon} alt="logoutIcon" />
                     Logout

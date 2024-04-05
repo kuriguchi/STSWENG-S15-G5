@@ -9,6 +9,7 @@ const OrderDetails = () => {
     const location = useLocation();
     const navigate = useNavigate();
 
+    const [dayOrders, setDayOrders] = useState(location.state.dayOrders);
     const order = location.state.order;
     const date = location.state.date;
 
@@ -19,17 +20,35 @@ const OrderDetails = () => {
         setSelectedStatus(event.target.value);
     };
 
-    const handleConfirmChanges = () => {
-        // TODO: change in db
-        order.status = selectedStatus;
-        setOrderStatus(order.status);
+    const handleConfirmChanges = async () => {
+        const updatedOrder = { ...order, status: selectedStatus };
+        try {
+            const response = await fetch(`http://localhost:4000/updateOrder/${order.orderNum}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(updatedOrder),
+            });
+
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            setDayOrders(dayOrders.map((o) => (o.orderNum === order.orderNum ? updatedOrder : o)));
+            setOrderStatus(selectedStatus);
+        } catch (error) {
+            console.error('A problem occurred when trying to update the order:', error);
+        }
     };
 
     return (
         <div className={styles['orderdetails-container']}>
             <div className={styles.header}>
                 <div>
-                    <button className={styles.back} onClick={() => navigate(-1)}>
+                    <button
+                        className={styles.back}
+                        onClick={() => navigate('/dashboard/day-orders', { state: { orders: dayOrders, date } })}
+                    >
                         <img src={leftArrow} alt="back" />
                     </button>
                     <h2>{format(date, 'MMMM')}</h2>
@@ -37,7 +56,6 @@ const OrderDetails = () => {
                 <h3>{format(date, 'MM / dd / yyyy')}</h3>
             </div>
             <div className={`${styles.order} ${styles[selectedStatus.replace(/\s+/g, '-').toLowerCase()]}`}>
-                {/* row 1 */}
                 <div className={styles.num}>
                     <b>Order Number:</b>
                     {order.orderNum}
@@ -51,7 +69,6 @@ const OrderDetails = () => {
                     {order.addr1}
                 </div>
 
-                {/* row 2 */}
                 <div className={styles.type}>
                     <b>Order Type:</b>
                     {order.orderedProduct}
@@ -65,7 +82,6 @@ const OrderDetails = () => {
                     {order.addr2}
                 </div>
 
-                {/* row 3 */}
                 <div>
                     <b>Size:</b>
                     {order.size}
@@ -79,7 +95,6 @@ const OrderDetails = () => {
                     {order.mode}
                 </div>
 
-                {/* row 4 */}
                 <div>
                     <b>Quantity:</b>
                     {order.qty}
@@ -95,7 +110,6 @@ const OrderDetails = () => {
                         : ''}
                 </div>
 
-                {/*  */}
                 <div className={styles.status}>
                     <b>Status:</b>
                     <select value={selectedStatus} onChange={handleStatusChange}>
@@ -107,7 +121,7 @@ const OrderDetails = () => {
                 </div>
                 <div className={styles.notes}>
                     <b>Additional Notes:</b>
-                    {order.orderDes}
+                    {order.additional}
                 </div>
                 {selectedStatus !== orderStatus && (
                     <button className={styles['confirm-button']} onClick={handleConfirmChanges}>

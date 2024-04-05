@@ -10,8 +10,8 @@ const DayOrders = () => {
     const location = useLocation();
     const navigate = useNavigate();
 
-    const orders = location.state.orders;
     const date = location.state.date;
+    const orders = location.state.orders;
 
     const [selectedStatus, setSelectedStatus] = useState('');
     const [filteredOrders, setFilteredOrders] = useState(orders);
@@ -28,25 +28,17 @@ const DayOrders = () => {
     const exportToCSV = () => {
         const csvRows = [];
 
-        // Check if there are orders
         if (orders.length > 0) {
-            // Get the headers from the keys of the first order
             const headers = Object.keys(orders[0]);
             csvRows.push(headers.join(','));
 
-            // Add the orders
             orders.forEach((order) => {
                 csvRows.push(Object.values(order).join(','));
             });
         }
 
-        // Convert the rows to a single string
         const csvString = csvRows.join('\n');
-
-        // Create a Blob with the CSV string
         const blob = new Blob([csvString], { type: 'text/csv;charset=utf-8;' });
-
-        // Download the CSV file
         saveAs(blob, `${format(date, 'MM-dd-yyyy')}_orders.csv`);
     };
 
@@ -81,7 +73,7 @@ const DayOrders = () => {
                 {filteredOrders.map((order, index) => (
                     <Link
                         to="order-details"
-                        state={{ order: order, date: date }}
+                        state={{ dayOrders: orders, order, date: date }}
                         className={`${styles['order-row']} ${styles[order.status.replace(/\s+/g, '-').toLowerCase()]}`}
                         key={index}
                     >
@@ -91,13 +83,6 @@ const DayOrders = () => {
                         <div className={styles['order-price']}>{order.price}</div>
                     </Link>
                 ))}
-
-                {/* <Link to="order-details" className={styles['order-row']}>
-                    <div className={styles['order-id']}>order</div>
-                    <div>Strawberry Cheesecake</div>
-                    <div>Pending</div>
-                    <div className={styles['order-price']}>P 1,500.00</div>
-                </Link> */}
             </div>
             <div className={styles['export-container']} onClick={exportToCSV}>
                 Export as .csv
