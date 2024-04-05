@@ -149,7 +149,7 @@ const ProductDetails = () => {
                         <button type="button" className="orange-button">
                             Add to Cart
                         </button>
-                        <button type="button" className="orange-button" onClick={handleOrder} >
+                        <button type="button" id={"orange_button_id" + product._id} className="orange-button" onClick={handleOrder} >
                             Order now
                         </button>
                     </div>

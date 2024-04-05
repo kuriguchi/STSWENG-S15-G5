@@ -47,7 +47,7 @@ const OurProducts = () => {
             <img src={banner} alt="Banner" className="product-page-banner" />
             <div className="cake-products-section">
                 <img src={cakesPartitionHeader} alt="Cakes Partition Header" className="partition-header" />
-                    <ul className="product-snippets-container">
+                    <ul id="productLists" className="product-snippets-container">
                         {products.map(product => (
                             <li key={product._id}>
                                 <Product {... {productImg: product.img, productName: product.name, productPrice: product.price, productId: product._id}} />
