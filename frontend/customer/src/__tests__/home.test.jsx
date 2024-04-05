@@ -14,6 +14,14 @@ import OrderDetailsContainer from '../components/containerTemplate/ODContainer.j
 import DeliveryContainer from '../components/containerTemplate/DeliveryContainer.jsx';
 import CircleButton from '../pages/ourproducts/orderform/components/CircleBtn.jsx';
 
+const originalWarn = console.warn.bind(console.warn)
+beforeAll(() => {
+console.warn = (msg) => 
+    !msg.toString().includes('componentWillReceiveProps') && originalWarn(msg)
+})
+afterAll(() => {
+console.warn = originalWarn
+})
 
 afterEach(cleanup);
 
