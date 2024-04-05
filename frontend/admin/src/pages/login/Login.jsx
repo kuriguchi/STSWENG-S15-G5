@@ -14,7 +14,7 @@ const Login = () => {
     const navigate = useNavigate();
 
     const handleSubmit = (event) => {
-        if(isUserValid && isPassValid){
+        if (isUserValid && isPassValid) {
             navigate('/dashboard');
         } else {
             alert('Incorrect User or Password.');
@@ -24,7 +24,7 @@ const Login = () => {
     const validateUser = (e) => {
         const user = e.target.value;
 
-        if(user == 'root'){
+        if (user == 'root') {
             setIsUserValid(true);
         } else {
             setIsUserValid(false);
@@ -34,18 +34,17 @@ const Login = () => {
     const validatePass = (e) => {
         const pass = e.target.value;
 
-        if(pass == 'stswengg5'){
+        if (pass == 'stswengg5') {
             setIsPassValid(true);
         } else {
             setIsPassValid(false);
         }
     };
 
-    useEffect (() => {
+    useEffect(() => {
         console.log('VALID USER: ', isUserValid);
         console.log('VALID PASS: ', isPassValid);
-
-    })
+    });
 
     return (
         <main>
@@ -56,7 +55,7 @@ const Login = () => {
                         <h2 className="login-heading">CONTROL PANEL SIGN IN</h2>
                         <div className="input-box">
                             <img src={userIcon} className="icon" />
-                            <input type="text" placeholder="admin" required onChange={validateUser}/>
+                            <input type="text" placeholder="admin" required onChange={validateUser} />
                         </div>
 
                         <div className="input-box">
