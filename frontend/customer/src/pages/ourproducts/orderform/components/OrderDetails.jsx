@@ -82,7 +82,7 @@ function OrderDetails(props){
 
                 <div className="order-details-content">
                     <div className="order-details-imgbox">
-                        <img src={image} alt="carrot_cake" />
+                        <img src={`/images/${props.product.img}`} alt="carrot_cake" />
                     </div>
 
                     <div className="spacer-25"></div>

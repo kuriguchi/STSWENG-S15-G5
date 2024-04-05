@@ -100,7 +100,7 @@ const ProductDetails = () => {
                         </div>
                         <div className="main-product-image-container">
                             <div className="main-product-image-wrapper">
-                                <img src={image} alt="main product" className="main-product-image" />
+                                <img src={`/images/${product.img}`} alt="main product" className="main-product-image" />
                             </div>
                             <img src={elipses} alt="elipses" className="elipses" />
                         </div>

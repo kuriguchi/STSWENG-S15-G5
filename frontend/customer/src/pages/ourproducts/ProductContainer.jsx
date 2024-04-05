@@ -10,17 +10,21 @@ import bakedPartitionHeader from '../../assets/ourproducts-imgs/baked_partition_
 function Product (props){
     const [image, setImage] = useState(null);
 
-    const imgPath = props.productImg;
+    // const imgPath = props.productImg;
 
-    useEffect(() => {
-        import(/* @vite-ignore */ imgPath)
-            .then(imageModule => {
-                setImage(imageModule.default);
-            })
-            .catch(error => {
-                console.error('Error loading image: ', error);
-            });
-    }, [imgPath]);
+    const imgPath = `../../assets/ourproducts-imgs/${props.productImg}`;
+
+    // useEffect(() => {
+    //     import(/* @vite-ignore */ imgPath)
+    //         .then(imageModule => {
+    //             setImage(imageModule.default);
+    //         })
+    //         .catch(error => {
+    //             console.error('Error loading image: ', error);
+    //         });
+    // }, [imgPath]);
+
+    console.log('IMAGE: ', props.productImg);
 
     return (
         <div>
@@ -28,7 +32,7 @@ function Product (props){
                 <div className="product-snippet">
                     <div className="product-snippet-image-container cake">
                         <div className="product-image-inner-line"></div>
-                        <img src={image} alt="Carrot Cake" className="product-snippet-image" />
+                        <img src={`/images/${props.productImg}`} alt="Carrot Cake" className="product-snippet-image" />
                     </div>
                     <div className="product-snippet-details">
                         <h3 className="product-snippet-title">{props.productName}</h3>
