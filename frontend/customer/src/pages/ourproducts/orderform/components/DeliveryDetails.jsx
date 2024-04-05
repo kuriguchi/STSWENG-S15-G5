@@ -29,7 +29,7 @@ function DeliveryDetails(props){
 
     const toggleCalendar = (event) => {
         setIsCalendarVisible(!isCalendarVisible);
-        props.onSelectChange("date", date);
+        props.onSelectChange("deliveryDate", date);
     };
 
     const toggleMode = (event) => {

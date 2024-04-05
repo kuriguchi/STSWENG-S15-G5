@@ -18,7 +18,7 @@ const OurProducts = () => {
 
     useEffect(() => {
         const fetchProducts = () => {
-            fetch(`http://localhost:4000/getAllProducts`)
+            fetch(`https://miscake-api.vercel.app/getAllProducts`)
                 .then(response => {
                     if(!response.ok) {
                         throw new Error('Failed to get all products.');

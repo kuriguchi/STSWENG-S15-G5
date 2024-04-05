@@ -37,7 +37,7 @@ const ProductDetails = () => {
     }, []);
 
     useEffect(() => {
-        fetch(`http://localhost:4000/getProduct/${productID}`)
+        fetch(`https://miscake-api.vercel.app/getProduct/${productID}`)
             .then(res => {
                 if(!res.ok){
                     throw new Error('Error Getting Product.');

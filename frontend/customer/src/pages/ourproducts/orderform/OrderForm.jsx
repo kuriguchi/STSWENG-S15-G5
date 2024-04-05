@@ -18,15 +18,13 @@ function OrderForm(){
     const location = useLocation();
     const navigate = useNavigate();
 
-    const productName = "Carrot Cake";
-
     const productID = location.pathname
         .split('/')
         .filter((x) => x)
         .pop();
 
     const [inputs, setInputs] = useState({
-        pname: productName,
+        pname: product.name,
         orderNum: '',
         fname: '',
         lname: '',
@@ -50,33 +48,19 @@ function OrderForm(){
 
     const handleSelectChange = (name, value) => {
         setInputs({ ...inputs, [name]: value})
+    };
+
+    const handleDateChange = (e) => {
+        const date = e.target.value;
+        setInputs({...inputs, [deliveryDate]: date});
     }
 
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log(inputs);
 
-        /** For Faster Input and Access to API */
-        const sampleForm = {
-            orderedProduct: productName,
-            orderNum: '12345',
-            fname: 'Sample First Name',
-            lname: 'Sample Last Name',
-            contactNo: 'Sample Contact',
-            email: 'sample@email.com',
-            addr1: 'Sample Address 1',
-            addr2: 'Sample Address 2',
-            city: 'Sample City',
-            province: 'Sample State',
-            size: 'Sample Size',
-            qty: 0,
-            datePickup: 'Sample Date',
-            mode: 'Store Pick-Up',
-            additional: 'None'
-        };
-
         const orderForm = {
-            orderedProduct: productName,
+            orderedProduct: product.name,
             orderNum: '12345',
             fname: inputs.fname,
             lname: inputs.lname,
@@ -93,12 +77,12 @@ function OrderForm(){
             additional: inputs.additional
         }
 
-        fetch("http://localhost:4000/postOrder", {
+        fetch("https://miscake-api.vercel.app/postOrder", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(sampleForm)
+            body: JSON.stringify(orderForm)
         })
 
             .then((res) => {
@@ -113,7 +97,7 @@ function OrderForm(){
                 console.error('Error: ', error);
             });
 
-        navigate('/');
+        // navigate('/');
     }
 
     useEffect(() => {
@@ -121,7 +105,7 @@ function OrderForm(){
     }, []);
 
     useEffect(() => {
-        fetch(`http://localhost:4000/getProduct/${productID}`)
+        fetch(`https://miscake-api.vercel.app/getProduct/${productID}`)
             .then(res => {
                 if(!res.ok){
                     throw new Error('Error Getting Product.');
@@ -155,7 +139,7 @@ function OrderForm(){
                         <div className="order-delivery-box">
                             <OrderDetails {...{onChange: handleChange, form: inputs, onSelectChange: handleSelectChange, product: product}} />
                             <div style={{height: "42px"}}></div>
-                            <DeliveryDetails {...{onChange: handleChange, form: inputs, onSelectChange: handleSelectChange}} />
+                            <DeliveryDetails {...{onChange: handleChange, form: inputs, onSelectChange: handleSelectChange, onDateChange: handleDateChange}} />
                         </div>
                     </div>
                 </form>

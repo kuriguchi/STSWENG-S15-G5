@@ -5,12 +5,15 @@ const orderController = {
         const formData = req.body;
         const newData = new Order(formData);
 
+        console.log(newData);
+
         await newData.save()
             .then((savedOrder) => {
                 res.status(201).json(savedOrder);
             })
             .catch((error) => {
                 res.status(500).json({ error: 'An error occurred: ' + error });
+                console.log(error);
             });
     },
 
