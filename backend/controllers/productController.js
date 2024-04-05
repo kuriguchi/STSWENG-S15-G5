@@ -17,8 +17,10 @@ const productController = {
     getProduct: async function(req, res){
         const query = req.params.productId;
 
+        console.log('Query: ', query);
+
         try {
-            const product = await Product.findOne({productId: query});
+            const product = await Product.findOne({_id: query});
 
             if(!product){
                 res.status(404).json({error: 404, message: 'Product not found.'});

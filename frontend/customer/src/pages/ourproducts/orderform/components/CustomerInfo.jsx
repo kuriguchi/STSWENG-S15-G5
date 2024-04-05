@@ -223,13 +223,13 @@ function CustomerInfo(props) {
                                      >{currCity || "Select City / Municipality..."}</div>
                                 <div className="spacer-25"></div>
                                 <div className="city-select-size dropdown-box">
-                                    <Button onClick={toggleSelectCityVisibility} />
+                                    <Button {...{onClick: toggleSelectCityVisibility, buttonId: "selectCityMuni"}} />
                                 </div>
                             </div>
 
                             <div className="br-10"></div>
 
-                            <Select {...{isVisible: isSelectCityVisible, list: cities, width: "233px", handleChange: handleCityChange, toggleVisibility: toggleSelectCityVisibility}}/>
+                            <Select {...{isVisible: isSelectCityVisible, list: cities, width: "233px", handleChange: handleCityChange, toggleVisibility: toggleSelectCityVisibility, dropdownId: "dropdownCiMunity"}}/>
                         </div>
 
                         <div className="spacer-30"></div>
@@ -245,7 +245,7 @@ function CustomerInfo(props) {
                                 <div id="customerState" className="placeholder-text" style={{position: "absolute", left: "13px"}}>{currState || "Select State / Province..."}</div>
                                 <div className="spacer-25"></div>
                                 <div className="state-select-size dropdown-box">
-                                    <Button onClick={toggleSelectStateVisibility} />
+                                    <Button {...{onClick: toggleSelectStateVisibility, buttonId: "selectState"}} />
                                 </div>
                             </div>
 

@@ -13,7 +13,7 @@ function Product (props){
     const imgPath = props.productImg;
 
     useEffect(() => {
-        import(imgPath)
+        import(/* @vite-ignore */ imgPath)
             .then(imageModule => {
                 setImage(imageModule.default);
             })
@@ -34,7 +34,7 @@ function Product (props){
                         <h3 className="product-snippet-title">{props.productName}</h3>
                         <p className="product-snippet-price">starts at Php {props.productPrice}</p>
                     </div>
-                    <Link to={`/ourproducts/${props.productId}`} className="order-product-button">
+                    <Link to={`/ourproducts/${props.productId}`} id={"button_id" + props.productId} className="order-product-button">
                         order now
                     </Link>
                 </div>
