@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 
 // components
 import ImageCarousel from '../../components/ImageCarousel/ImageCarousel';
-import WindowFrame from './components/WindowFrame.jsx';
 
 //import css
 import './Home.css';
@@ -71,12 +70,9 @@ const Home = () => {
                     </div>
                 </div>
                 <div className="featured-products-middle">
-                    <WindowFrame
-                        imgSrc={windowframeimg3}
-                        altText="windowframeimg3"
-                        title="CARROT CAKE"
-                        price="starts at Php 2500"
-                    />
+                    <div className="windowframe">
+                        <img src={windowframeimg3} alt="windowframeimg3" className="windowframe-image" />
+                    </div>
                     <div className="featured-products-text-section">
                         <p className="text-section-header-regular">TASTE ELEGANCE</p>
                         <div className="text-section-plain-text-area" id="plain-text-area1">
