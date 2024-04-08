@@ -6,7 +6,7 @@ import person2 from '../../assets/contactus-imgs/person2.png';
 
 const ContactUs = () => {
     return (
-        <main>
+        <main className="contact-us">
             <div className="contact-us-page-content">
                 <div className="contact-us-background">
                     <img src={contactUsHeader} alt="Contact Us" className="contactus-header" />

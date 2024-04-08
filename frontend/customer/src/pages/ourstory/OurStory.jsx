@@ -15,36 +15,21 @@ const OurStory = () => {
                 <img src={pic1} alt="rolling bread" className="our-story-imgs" id="ourStoryImg1" />
                 <img src={cupcakeIcon} alt="cupcake icon" className="our-story-icons" id="ourStoryCupcakeIcon" />
                 <div className="our-story-msgs" id="ourStoryMsg1">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus maximus interdum malesuada. Fusce a
-                    urna ac ligula eleifend eleifend quis vulputate leo. Vestibulum egestas, lacus a cursus dictum,
-                    risus ipsum tincidunt mauris, at tincidunt tellus tellus sit amet nisi. Maecenas felis sapien,
-                    faucibus id elementum eget, blandit a risus. Praesent luctus, ex at maximus commodo, lacus arcu
-                    vehicula lorem, sit amet faucibus ligula ipsum ut mi. Aenean dapibus nunc quis lectus feugiat
-                    dictum. Nulla pellentesque ipsum magna, ac pharetra ante iaculis vitae. Praesent rutrum placerat
-                    vestibulum. Quisque sit amet venenatis nulla. Sed et ipsum metus. Vestibulum sed blandit eros. In
-                    sit amet urna et mi varius posuere. Sed pulvinar in metus id fermentum. Donec ut tortor sodales,
-                    gravida libero nec, scelerisque justo. Nam id sem euismod, interdum nisi a, varius eros. Curabitur
-                    ac lorem arcu. Ut convallis urna eget laoreet efficitur. Vestibulum semper sit amet quam ut
-                    efficitur. Donec id urna sit amet velit placerat hendrerit. Ut purus dolor, efficitur eu porttitor
-                    quis, egestas ac nunc. Nullam eleifend dolor ac malesuada vulputate. Proin molestie urna nec finibus
-                    feugiat.
+                    Welcome to Mis&apos;Cake, where every bite tells a story!
+                    <br />
+                    <br />
+                    <br /> At Mis&apos;Cake, we believe that life is too short to skip dessert, and that&apos;s why we
+                    pour our hearts into crafting delectable treats that are as beautiful as they are delicious. From
+                    classic favorites to innovative creations, our cakes are baked with love and attention to detail,
+                    ensuring each bite is a moment of pure bliss.
                 </div>
                 <img src={cookieIcon} alt="cookie icon" className="our-story-icons" id="ourStoryCookieIcon" />
                 <img src={pic2} alt="" className="our-story-imgs" id="ourStoryImg2" />
                 <div className="our-story-msgs" id="ourStoryMsg2">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus maximus interdum malesuada. Fusce a
-                    urna ac ligula eleifend eleifend quis vulputate leo. Vestibulum egestas, lacus a cursus dictum,
-                    risus ipsum tincidunt mauris, at tincidunt tellus tellus sit amet nisi. Maecenas felis sapien,
-                    faucibus id elementum eget, blandit a risus. Praesent luctus, ex at maximus commodo, lacus arcu
-                    vehicula lorem, sit amet faucibus ligula ipsum ut mi. Aenean dapibus nunc quis lectus feugiat
-                    dictum. Nulla pellentesque ipsum magna, ac pharetra ante iaculis vitae. Praesent rutrum placerat
-                    vestibulum. Quisque sit amet venenatis nulla. Sed et ipsum metus. Vestibulum sed blandit eros. In
-                    sit amet urna et mi varius posuere. Sed pulvinar in metus id fermentum. Donec ut tortor sodales,
-                    gravida libero nec, scelerisque justo. Nam id sem euismod, interdum nisi a, varius eros. Curabitur
-                    ac lorem arcu. Ut convallis urna eget laoreet efficitur. Vestibulum semper sit amet quam ut
-                    efficitur. Donec id urna sit amet velit placerat hendrerit. Ut purus dolor, efficitur eu porttitor
-                    quis, egestas ac nunc. Nullam eleifend dolor ac malesuada vulputate. Proin molestie urna nec finibus
-                    feugiat.
+                    At Mis&apos;Cake, we understand that every celebration is unique, which is why we offer custom cake
+                    designs tailored to your preferences. Whether you dream of a whimsical wedding cake, a playful
+                    birthday masterpiece, or a sophisticated dessert spread for your corporate event, our talented team
+                    will work closely with you to bring your vision to life.
                 </div>
                 <img src={breadIcon} alt="bread icon" className="our-story-icons" id="ourStoryBreadIcon" />
             </div>

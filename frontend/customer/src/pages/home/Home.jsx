@@ -4,15 +4,16 @@ import PropTypes from 'prop-types';
 
 // components
 import ImageCarousel from '../../components/ImageCarousel/ImageCarousel';
+import WindowFrame from './components/WindowFrame.jsx';
 
 //import css
 import './Home.css';
 
 // images
 import img1 from '../../assets/carousel-imgs/img1.png';
-import img2 from '../../assets/carousel-imgs/img2.jpg';
-import img3 from '../../assets/carousel-imgs/img3.jpg';
-import img4 from '../../assets/carousel-imgs/img4.jpg';
+import img2 from '../../assets/carousel-imgs/img2.png';
+import img3 from '../../assets/carousel-imgs/img5.jpg';
+import img4 from '../../assets/carousel-imgs/img6.jpg';
 
 import middle_partition from '../../assets/middle_partition_header.svg';
 import windowframeimg1 from '../../assets/featuredproducts-imgs/windowframeimg1.png';
@@ -70,9 +71,12 @@ const Home = () => {
                     </div>
                 </div>
                 <div className="featured-products-middle">
-                    <div className="windowframe">
-                        <img src={windowframeimg3} alt="windowframeimg3" className="windowframe-image" />
-                    </div>
+                    <WindowFrame
+                        imgSrc={windowframeimg3}
+                        altText="windowframeimg3"
+                        title="CARROT CAKE"
+                        price="starts at Php 2500"
+                    />
                     <div className="featured-products-text-section">
                         <p className="text-section-header-regular">TASTE ELEGANCE</p>
                         <div className="text-section-plain-text-area" id="plain-text-area1">
@@ -101,7 +105,7 @@ const Home = () => {
                             <div className="windowframe-hover-text">
                                 <span className="hover-text-title">DOUBLE CHOCOLATE</span>
                                 <span className="hover-text-title">CAKE</span>
-                                <span className="hover-text-price">starts at Php 2000</span>
+                                <span className="hover-text-price">starts at Php 2500</span>
                             </div>
                         )}
                     </div>
